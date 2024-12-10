@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from "./components/NavBar";
+import Section from "./components/Section";
+import useScrollNavigation from "./hooks/useScrollNavigation";
+
+const sections = ["section1", "section2", "section3", "section4"];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { currentSectionIndex, scrollToSection } =
+    useScrollNavigation(sections);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <Navbar
+        currentSectionIndex={currentSectionIndex}
+        scrollToSection={scrollToSection}
+      />
+      <Section id="section1" bgColor="#ffadad">
+        <div style={{ textAlign: "center" }}>
+          <h1>Welcome!</h1>
+          <p> Scroll down for more!</p>
+        </div>
+      </Section>
+      <Section id="section2" bgColor="#ffd6a5">
+        <div style={{ textAlign: "center" }}>
+          <h1>About us</h1>
+          <p> Something about us</p>
+        </div>
+      </Section>
+      <Section id="section3" bgColor="#fdffb6">
+        <div style={{ textAlign: "center" }}>
+          <h1>Contact</h1>
+          <p> Get in touch!</p>
+        </div>
+      </Section>
+      <Section id="section4" bgColor="#fdffdf">
+        <div style={{ textAlign: "center" }}>
+          <h1>More</h1>
+          <p> More stuff!</p>
+        </div>
+      </Section>
+    </div>
+  );
 }
 
-export default App
+export default App;
