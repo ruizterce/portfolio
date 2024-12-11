@@ -4,35 +4,15 @@ const Navbar = ({ currentSectionIndex, scrollToSection }) => {
   const sections = ["Welcome", "About Me", "Contact", "More"];
 
   return (
-    <nav
-      style={{
-        position: "fixed",
-        top: 0,
-        zIndex: 1000,
-        padding: "1rem",
-      }}
-    >
-      <ul
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          listStyle: "none",
-          margin: 0,
-          padding: 0,
-        }}
-      >
+    <nav className="fixed top-0 z-[1000] p-4">
+      <ul className="flex flex-col justify-center list-none m-0 p-0">
         {sections.map((section, index) => (
-          <li key={section} style={{ margin: "0 1rem" }}>
+          <li key={section} className="mx-4">
             <button
               onClick={() => scrollToSection(index)}
-              style={{
-                background: "none",
-                border: "none",
-                color: currentSectionIndex === index ? "#6b0000" : "#363636",
-                cursor: "pointer",
-                fontSize: "1rem",
-              }}
+              className={`bg-none border-none cursor-pointer text-lg ${
+                currentSectionIndex === index ? "text-red-700" : "text-gray-800"
+              }`}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </button>

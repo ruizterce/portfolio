@@ -10,16 +10,10 @@ const Section = ({ id, children, bgColor }) => {
 
   return (
     <animated.div
-      style={{
-        ...springs,
-        height: "100vh",
-        width: "100vw",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: bgColor || "#fff",
-        color: "#333",
-      }}
+      className={`h-screen w-screen flex items-center justify-center ${
+        bgColor ? "" : "bg-white"
+      } text-gray-800`}
+      style={{ ...springs, backgroundColor: bgColor || "#fff" }}
       id={id}
     >
       {children}
