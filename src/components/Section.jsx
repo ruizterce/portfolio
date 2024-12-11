@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useSpring, animated } from "@react-spring/web";
 
-const Section = ({ id, children, bgColor }) => {
+const Section = ({ id, children }) => {
   const springs = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
@@ -10,10 +10,8 @@ const Section = ({ id, children, bgColor }) => {
 
   return (
     <animated.div
-      className={`h-screen w-screen flex items-center justify-center ${
-        bgColor ? "" : "bg-white"
-      } text-gray-800`}
-      style={{ ...springs, backgroundColor: bgColor || "#fff" }}
+      className="h-screen w-screen flex items-center justify-center"
+      style={springs}
       id={id}
     >
       {children}
@@ -24,7 +22,6 @@ const Section = ({ id, children, bgColor }) => {
 Section.propTypes = {
   id: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  bgColor: PropTypes.string.isRequired,
 };
 
 export default Section;

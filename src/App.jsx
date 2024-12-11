@@ -9,31 +9,33 @@ function App() {
     useScrollNavigation(sections);
 
   return (
-    <div>
+    <div className="dark-mode">
       <Navbar
         currentSectionIndex={currentSectionIndex}
         scrollToSection={scrollToSection}
       />
-      <Section id="section1" bgColor="#ffadad">
-        <div className="text-center">
-          <h1>Welcome!</h1>
-          <p> Scroll down for more!</p>
+      <Section id="section1">
+        <div className="h-full w-full bg-light text-dark flex flex-col items-center justify-center">
+          <div className="text-center">
+            <h1>Welcome!</h1>
+            <p> Scroll down for more!</p>
+          </div>
         </div>
       </Section>
-      <Section id="section2" bgColor="#ffd6a5">
-        <div className="text-center">
+      <Section id="section2">
+        <div className="h-full w-full bg-light text-dark flex flex-col items-center justify-center">
           <h1>About us</h1>
           <p> Something about us</p>
         </div>
       </Section>
-      <Section id="section3" bgColor="#fdffb6">
-        <div className="text-center">
+      <Section id="section3">
+        <div className="h-full w-full bg-light text-dark flex flex-col items-center justify-center">
           <h1>Contact</h1>
           <p> Get in touch!</p>
         </div>
       </Section>
-      <Section id="section4" bgColor="#fdffdf">
-        <div className="text-center">
+      <Section id="section4">
+        <div className="h-full w-full bg-light text-dark flex flex-col items-center justify-center">
           <h1>More</h1>
           <p> More stuff!</p>
         </div>
