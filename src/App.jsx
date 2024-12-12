@@ -1,5 +1,7 @@
+import { useState } from "react";
 import Navbar from "./components/NavBar";
 import Section from "./components/Section";
+import Topbar from "./components/TopBar";
 import useScrollNavigation from "./hooks/useScrollNavigation";
 
 const sections = ["section1", "section2", "section3", "section4"];
@@ -7,9 +9,11 @@ const sections = ["section1", "section2", "section3", "section4"];
 function App() {
   const { currentSectionIndex, scrollToSection } =
     useScrollNavigation(sections);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
-    <div className="dark-mode">
+    <div className={isDarkMode ? "dark-mode" : ""}>
+      <Topbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <Navbar
         currentSectionIndex={currentSectionIndex}
         scrollToSection={scrollToSection}
