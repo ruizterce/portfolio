@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
 const Navbar = ({ currentSectionIndex, scrollToSection }) => {
-  const sections = ["Welcome", "About Me", "Contact", "More"];
+  const sections = ["Welcome", "Projects", "Contact", "More"];
 
   return (
-    <div className="fixed flex h-screen items-center">
+    <div className="fixed flex h-screen items-start">
       <nav className="top-0 z-[1000] p-4">
         <ul className="flex flex-col justify-center list-none m-0 p-0">
           {sections.map((section, index) => (
