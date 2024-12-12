@@ -1,29 +1,94 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { EffectCoverflow, Pagination } from "swiper/modules";
+
 const CardSlideshow = () => {
   const data = [
-    { title: "Project 1", imgUrl: "url", description: "Desc" },
-    { title: "Project 2", imgUrl: "url", description: "Desc" },
-    { title: "Project 3", imgUrl: "url", description: "Desc" },
-    { title: "Project 4", imgUrl: "url", description: "Desc" },
-    { title: "Project 5", imgUrl: "url", description: "Desc" },
-    { title: "Project 6", imgUrl: "url", description: "Desc" },
-    { title: "Project 7", imgUrl: "url", description: "Desc" },
+    {
+      title: "Project 1",
+      imgUrl: "https://picsum.photos/500/500",
+      description: "Desc",
+    },
+    {
+      title: "Project 2",
+      imgUrl: "https://picsum.photos/500/500",
+      description: "Desc",
+    },
+    {
+      title: "Project 3",
+      imgUrl: "https://picsum.photos/500/500",
+      description: "Desc",
+    },
+    {
+      title: "Project 4",
+      imgUrl: "https://picsum.photos/500/500",
+      description: "Desc",
+    },
+    {
+      title: "Project 5",
+      imgUrl: "https://picsum.photos/500/500",
+      description: "Desc",
+    },
+    {
+      title: "Project 6",
+      imgUrl: "https://picsum.photos/500/500",
+      description: "Desc",
+    },
+    {
+      title: "Project 7",
+      imgUrl: "https://picsum.photos/500/500",
+      description: "Desc",
+    },
+    {
+      title: "Project 8",
+      imgUrl: "https://picsum.photos/500/500",
+      description: "Desc",
+    },
+    {
+      title: "Project 9",
+      imgUrl: "https://picsum.photos/500/500",
+      description: "Desc",
+    },
   ];
 
   return (
-    <div className="relative flex items-center justify-center">
-      <div className="absolute w-screen flex items-center justify-center">
-        <button className="absolute left-10 h-10 w-10 bg-red-500">L</button>
-        <button className="absolute right-10 h-10 w-10 bg-red-500">R</button>
-      </div>
-      <div className="flex gap-6 ">
-        {data.map((project) => {
-          return (
-            <div key={project.title} className="p-16 shadow text-center">
-              <h1>{project.title}</h1>
-              <p>{project.description}</p>
-            </div>
-          );
-        })}
+    <div className="w-full flex flex-col justify-center items-center relative">
+      <h1
+        className="absolute text-3xl"
+        style={{ transform: "translateY(-280px)" }}
+      >
+        Work
+      </h1>
+      <div className="w-full">
+        <Swiper
+          effect={"coverflow"}
+          modules={[EffectCoverflow, Pagination]}
+          slidesPerView={"auto"}
+          centeredSlides={true}
+          initialSlide={4}
+          coverflowEffect={{
+            rotate: 10,
+            stretch: 0,
+            depth: 200,
+            scale: 0.9,
+            modifier: 1,
+            slideShadows: true,
+          }}
+        >
+          {data.map((project) => {
+            return (
+              <SwiperSlide key={project.title} style={{ maxWidth: "300px" }}>
+                <div className="swiper-slide-transform  bg-lightMedium flex flex-col justify-center items-center ">
+                  <img src={project.imgUrl} className="w-auto h-96 "></img>
+                  <div className="p-4 text-center">
+                    <h1>{project.title}</h1>
+                    <h1>{project.description}</h1>
+                  </div>
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
     </div>
   );
