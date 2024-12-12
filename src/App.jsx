@@ -3,6 +3,7 @@ import Navbar from "./components/NavBar";
 import Section from "./components/Section";
 import Topbar from "./components/TopBar";
 import useScrollNavigation from "./hooks/useScrollNavigation";
+import Welcome from "./components/Welcome";
 import CardSlideshow from "./components/CardSlideshow";
 
 const sections = ["section1", "section2", "section3", "section4"];
@@ -21,15 +22,7 @@ function App() {
       />
 
       <Section id="section1">
-        <div className="h-full w-full bg-light text-dark flex flex-col items-center justify-center">
-          <div className="text-center">
-            <h1>Welcome!</h1>
-            <p>
-              <span className="text-2xl">ruizterce </span>is a passionate Full
-              Stack Dev based in <span className="text-xl"> Barcelona</span>
-            </p>
-          </div>
-        </div>
+        <Welcome />
       </Section>
       <Section id="section2">
         <div className="h-full w-full bg-light text-dark flex flex-col items-center justify-center">
