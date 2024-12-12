@@ -22,7 +22,10 @@ function App() {
         <div className="h-full w-full bg-light text-dark flex flex-col items-center justify-center">
           <div className="text-center">
             <h1>Welcome!</h1>
-            <p> Scroll down for more!</p>
+            <p>
+              <span className="text-2xl">ruizterce </span>is a passionate Full
+              Stack Dev based in <span className="text-xl"> Barcelona</span>
+            </p>
           </div>
         </div>
       </Section>
