@@ -22,3 +22,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+.swiper-slide-shadow-left {
+  border-radius: 25px;
+}
+
+.swiper-slide-shadow-right {
+  border-radius: 25px;
+}

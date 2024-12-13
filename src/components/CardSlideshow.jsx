@@ -8,26 +8,26 @@ const CardSlideshow = ({ isDarkMode }) => {
   const data = [
     {
       title: "Battleship",
-      imgUrl: "/src/assets/img/battleship-1.png",
+      imgUrl: "/public/img/battleship-1.png",
       chips: (
         <>
           <Chip
-            icon="/src/assets/icons/html5-plain.svg"
+            icon="/public/icons/html5-plain.svg"
             text="HTML"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/css3-plain.svg"
+            icon="/public/icons/css3-plain.svg"
             text="CSS"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/javascript-original.svg"
+            icon="/public/icons/javascript-original.svg"
             text="JavaScript"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/webpack-plain.svg"
+            icon="/public/icons/webpack-plain.svg"
             text="Webpack"
             bgColor="light"
           />
@@ -39,21 +39,21 @@ const CardSlideshow = ({ isDarkMode }) => {
     },
     {
       title: "CV Editor",
-      imgUrl: "/src/assets/img/cv-editor-1.png",
+      imgUrl: "/public/img/cv-editor-1.png",
       chips: (
         <>
           <Chip
-            icon="/src/assets/icons/javascript-original.svg"
+            icon="/public/icons/javascript-original.svg"
             text="JavaScript"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/react-original.svg"
+            icon="/public/icons/react-original.svg"
             text="React"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/vitejs-plain.svg"
+            icon="/public/icons/vitejs-plain.svg"
             text="Vite"
             bgColor="light"
             invertIcon="true"
@@ -66,37 +66,37 @@ const CardSlideshow = ({ isDarkMode }) => {
     },
     {
       title: "Linkeem",
-      imgUrl: `/src/assets/img/linkeem-2-${isDarkMode ? "d" : "l"}.png`,
+      imgUrl: `/public/img/linkeem-2-${isDarkMode ? "d" : "l"}.png`,
       chips: (
         <>
           <Chip
-            icon="/src/assets/icons/typescript-original.svg"
+            icon="/public/icons/typescript-original.svg"
             text="TypeScript"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/react-original.svg"
+            icon="/public/icons/react-original.svg"
             text="React"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/ionic-original.svg"
+            icon="/public/icons/ionic-original.svg"
             text="Ionic"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/express-original.svg"
+            icon="/public/icons/express-original.svg"
             text="Express"
             bgColor="light"
             invertIcon="true"
           />
           <Chip
-            icon="/src/assets/icons/postgresql-plain.svg"
+            icon="/public/icons/postgresql-plain.svg"
             text="PostgreSQL"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/prisma-original.svg"
+            icon="/public/icons/prisma-original.svg"
             text="Prisma"
             bgColor="light"
             invertIcon="true"
@@ -112,39 +112,39 @@ const CardSlideshow = ({ isDarkMode }) => {
       chips: (
         <>
           <Chip
-            icon="/src/assets/icons/javascript-original.svg"
+            icon="/public/icons/javascript-original.svg"
             text="JavaScript"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/react-original.svg"
+            icon="/public/icons/react-original.svg"
             text="React"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/express-original.svg"
+            icon="/public/icons/express-original.svg"
             text="Express"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/materialui-plain.svg"
+            icon="/public/icons/materialui-plain.svg"
             text="MUI"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/postgresql-plain.svg"
+            icon="/public/icons/postgresql-plain.svg"
             text="PostgreSQL"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/prisma-original.svg"
+            icon="/public/icons/prisma-original.svg"
             text="Prisma"
             bgColor="light"
             invertIcon="true"
           />
         </>
       ),
-      imgUrl: "/src/assets/img/blog-authors-1.png",
+      imgUrl: "/public/img/blog-authors-1.png",
       description: "Multi-frontend Blog",
       liveUrl: "",
       repoUrl: "https://github.com/ruizterce/blog-api",
@@ -154,24 +154,24 @@ const CardSlideshow = ({ isDarkMode }) => {
       chips: (
         <>
           <Chip
-            icon="/src/assets/icons/javascript-original.svg"
+            icon="/public/icons/javascript-original.svg"
             text="JavaScript"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/react-original.svg"
+            icon="/public/icons/react-original.svg"
             text="React"
             bgColor="light"
           />
           <Chip
-            icon="/src/assets/icons/vitejs-plain.svg"
+            icon="/public/icons/vitejs-plain.svg"
             text="Vite"
             bgColor="light"
             invertIcon="true"
           />
         </>
       ),
-      imgUrl: "/src/assets/img/pokemon-1.png",
+      imgUrl: "/public/img/pokemon-1.png",
       description: "Desc",
       liveUrl: "https://cardclicker.netlify.app",
       repoUrl: "https://github.com/ruizterce/card-clicker-game",
@@ -205,10 +205,10 @@ const CardSlideshow = ({ isDarkMode }) => {
           {data.map((project) => {
             return (
               <SwiperSlide key={project.title} className="max-w-xs max-h-full">
-                <div className="swiper-slide-transform  bg-lightMedium flex flex-col justify-center items-center ">
+                <div className="swiper-slide-transform rounded-3xl bg-lightMild flex flex-col justify-center items-center ">
                   <img
                     src={project.imgUrl}
-                    className="object-cover object-top w-full h-[300px] sm:h-[420px]"
+                    className="object-cover object-top w-full h-[300px] sm:h-[420px] rounded-t-3xl"
                   ></img>
 
                   <div className="flex flex-wrap justify-center gap-2 m-2">

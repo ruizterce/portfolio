@@ -12,77 +12,77 @@ const Welcome = () => {
     "Full Stack Dev": (
       <div className="grid grid-cols-3 gap-4">
         <img
-          src="/src/assets/icons/git-plain-wordmark.svg"
+          src="/public/icons/git-plain-wordmark.svg"
           alt="Git"
           className="h-16 w-auto"
         />
         <img
-          src="/src/assets/icons/html5-plain-wordmark.svg"
+          src="/public/icons/html5-plain-wordmark.svg"
           alt="HTML5"
           className="h-16 w-auto"
         />
         <img
-          src="/src/assets/icons/css3-plain-wordmark.svg"
+          src="/public/icons/css3-plain-wordmark.svg"
           alt="CSS3"
           className="h-16 w-auto"
         />
         <img
-          src="/src/assets/icons/javascript-plain.svg"
+          src="/public/icons/javascript-plain.svg"
           alt="JavaScript"
           className="h-16 w-auto"
         />
         <img
-          src="/src/assets/icons/typescript-plain.svg"
+          src="/public/icons/typescript-plain.svg"
           alt="TypeScript"
           className="h-16 w-auto"
         />
         <img
-          src="/src/assets/icons/vitejs-plain.svg"
+          src="/public/icons/vitejs-plain.svg"
           alt="Vite"
           className="h-16 w-auto darkTheme:invert"
         />
         <img
-          src="/src/assets/icons/ionic-original-wordmark.svg"
+          src="/public/icons/ionic-original-wordmark.svg"
           alt="Ionic"
           className="h-16 w-auto"
         />
         <img
-          src="/src/assets/icons/react-original-wordmark.svg"
+          src="/public/icons/react-original-wordmark.svg"
           alt="React"
           className="h-16 w-auto"
         />
         <img
-          src="/src/assets/icons/tailwindcss-plain-wordmark.svg"
+          src="/public/icons/tailwindcss-plain-wordmark.svg"
           alt="TailwindCSS"
           className="h-16 w-auto darkTheme:invert"
         />
         <img
-          src="/src/assets/icons/axios-plain-wordmark.svg"
+          src="/public/icons/axios-plain-wordmark.svg"
           alt="Axios"
           className="h-16 w-auto"
         />
         <img
-          src="/src/assets/icons/postman-plain-wordmark.svg"
+          src="/public/icons/postman-plain-wordmark.svg"
           alt="Postman"
           className="h-16 w-auto"
         />
         <img
-          src="/src/assets/icons/nodejs-plain-wordmark.svg"
+          src="/public/icons/nodejs-plain-wordmark.svg"
           alt="Node.js"
           className="h-16 w-auto"
         />
         <img
-          src="/src/assets/icons/postgresql-original-wordmark.svg"
+          src="/public/icons/postgresql-original-wordmark.svg"
           alt="PostgreSQL"
           className="h-16 w-auto darkTheme:invert"
         />
         <img
-          src="/src/assets/icons/prisma-original-wordmark.svg"
+          src="/public/icons/prisma-original-wordmark.svg"
           alt="Prisma"
           className="h-16 w-auto darkTheme:invert"
         />
         <img
-          src="/src/assets/icons/express-original-wordmark.svg"
+          src="/public/icons/express-original-wordmark.svg"
           alt="Express"
           className="h-16 w-auto darkTheme:invert"
         />
@@ -91,20 +91,16 @@ const Welcome = () => {
     Barcelona: (
       <div className="grid grid-cols-3 gap-2">
         <img
-          src="/src/assets/icons/barcelona-sagrada.svg"
+          src="/public/icons/barcelona-sagrada.svg"
           alt="Sagrada Familia"
           className="h-16 w-auto darkTheme:invert"
         />
         <img
-          src="/src/assets/icons/es-ct.svg"
+          src="/public/icons/es-ct.svg"
           alt="Catalonia"
           className="h-16 w-auto"
         />
-        <img
-          src="/src/assets/icons/es.svg"
-          alt="Spain"
-          className="h-16 w-auto"
-        />
+        <img src="/public/icons/es.svg" alt="Spain" className="h-16 w-auto" />
       </div>
     ),
   };
