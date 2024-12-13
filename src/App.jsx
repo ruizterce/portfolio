@@ -14,7 +14,11 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
-    <div className={"overflow-hidden" + (isDarkMode ? " dark-mode" : "")}>
+    <div
+      className={
+        "overflow-hidden nunitoSans" + (isDarkMode ? " dark-mode" : "")
+      }
+    >
       <Topbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <Navbar
         currentSectionIndex={currentSectionIndex}

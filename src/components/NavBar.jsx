@@ -24,7 +24,7 @@ const Navbar = ({ currentSectionIndex, scrollToSection }) => {
                 <span
                   className={` h-1 w-1 sm:h-2 sm:w-2 my-1 sm:my-2 rounded inline-block ${
                     currentSectionIndex === index
-                      ? "bg-dark ring ring-medium"
+                      ? "bg-primary ring ring-medium"
                       : "ring ring-2 ring-lightMedium"
                   }`}
                 ></span>

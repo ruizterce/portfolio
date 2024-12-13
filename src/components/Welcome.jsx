@@ -12,77 +12,77 @@ const Welcome = () => {
     "Full Stack Dev": (
       <div className="grid grid-cols-3 gap-4">
         <img
-          src="/public/icons/git-plain-wordmark.svg"
+          src="/icons/git-plain-wordmark.svg"
           alt="Git"
           className="h-16 w-auto"
         />
         <img
-          src="/public/icons/html5-plain-wordmark.svg"
+          src="/icons/html5-plain-wordmark.svg"
           alt="HTML5"
           className="h-16 w-auto"
         />
         <img
-          src="/public/icons/css3-plain-wordmark.svg"
+          src="/icons/css3-plain-wordmark.svg"
           alt="CSS3"
           className="h-16 w-auto"
         />
         <img
-          src="/public/icons/javascript-plain.svg"
+          src="/icons/javascript-plain.svg"
           alt="JavaScript"
           className="h-16 w-auto"
         />
         <img
-          src="/public/icons/typescript-plain.svg"
+          src="/icons/typescript-plain.svg"
           alt="TypeScript"
           className="h-16 w-auto"
         />
         <img
-          src="/public/icons/vitejs-plain.svg"
+          src="/icons/vitejs-plain.svg"
           alt="Vite"
           className="h-16 w-auto darkTheme:invert"
         />
         <img
-          src="/public/icons/ionic-original-wordmark.svg"
+          src="/icons/ionic-original-wordmark.svg"
           alt="Ionic"
           className="h-16 w-auto"
         />
         <img
-          src="/public/icons/react-original-wordmark.svg"
+          src="/icons/react-original-wordmark.svg"
           alt="React"
           className="h-16 w-auto"
         />
         <img
-          src="/public/icons/tailwindcss-plain-wordmark.svg"
+          src="/icons/tailwindcss-plain-wordmark.svg"
           alt="TailwindCSS"
           className="h-16 w-auto darkTheme:invert"
         />
         <img
-          src="/public/icons/axios-plain-wordmark.svg"
+          src="/icons/axios-plain-wordmark.svg"
           alt="Axios"
           className="h-16 w-auto"
         />
         <img
-          src="/public/icons/postman-plain-wordmark.svg"
+          src="/icons/postman-plain-wordmark.svg"
           alt="Postman"
           className="h-16 w-auto"
         />
         <img
-          src="/public/icons/nodejs-plain-wordmark.svg"
+          src="/icons/nodejs-plain-wordmark.svg"
           alt="Node.js"
           className="h-16 w-auto"
         />
         <img
-          src="/public/icons/postgresql-original-wordmark.svg"
+          src="/icons/postgresql-original-wordmark.svg"
           alt="PostgreSQL"
           className="h-16 w-auto darkTheme:invert"
         />
         <img
-          src="/public/icons/prisma-original-wordmark.svg"
+          src="/icons/prisma-original-wordmark.svg"
           alt="Prisma"
           className="h-16 w-auto darkTheme:invert"
         />
         <img
-          src="/public/icons/express-original-wordmark.svg"
+          src="/icons/express-original-wordmark.svg"
           alt="Express"
           className="h-16 w-auto darkTheme:invert"
         />
@@ -91,16 +91,12 @@ const Welcome = () => {
     Barcelona: (
       <div className="grid grid-cols-3 gap-2">
         <img
-          src="/public/icons/barcelona-sagrada.svg"
+          src="/icons/barcelona-sagrada.svg"
           alt="Sagrada Familia"
           className="h-16 w-auto darkTheme:invert"
         />
-        <img
-          src="/public/icons/es-ct.svg"
-          alt="Catalonia"
-          className="h-16 w-auto"
-        />
-        <img src="/public/icons/es.svg" alt="Spain" className="h-16 w-auto" />
+        <img src="/icons/es-ct.svg" alt="Catalonia" className="h-16 w-auto" />
+        <img src="/icons/es.svg" alt="Spain" className="h-16 w-auto" />
       </div>
     ),
   };
@@ -151,37 +147,42 @@ const Welcome = () => {
         options={tiltOptions}
         className="h-full w-full flex justify-center items-center"
       >
-        <div className="text-center w-5/6 sm:w-2/3 leading-10">
-          <h1>Welcome!</h1>
+        <div className="text-center w-5/6 sm:w-2/3 sm:text-xl ">
+          <h1 className="text-3xl font-nunitoSans font-bold text-secondary">
+            Welcome!
+          </h1>
           <p>
-            I&apos;m{" "}
+            <span className="font-nunitoSans font-condensed">I&apos;m </span>
             <span
-              className="text-5xl hover:cursor-pointer"
+              className="text-4xl font-nunito font-bold text-primary hover:cursor-pointer"
               onMouseEnter={(e) => handleMouseEnter("ruizterce", e)}
               onMouseLeave={handleMouseLeave}
             >
               ruizterce
             </span>
-            , a passionate
+            <span className="font-nunitoSans font-condensed">
+              , a passionate{" "}
+            </span>
             <span
-              className="text-4xl hover:cursor-pointer"
+              className="text-4xl font-nunito font-bold text-primary hover:cursor-pointer font-nunito"
               onMouseEnter={(e) => handleMouseEnter("Full Stack Dev", e)}
               onMouseLeave={handleMouseLeave}
             >
-              {" "}
               Full Stack Developer
-            </span>{" "}
-            with a love for crafting efficient and elegant digital solutions. I
-            specialize in building responsive web applications, scalable backend
-            systems, and seamless user experiences. Based in
+            </span>
+            <span className="font-nunitoSans font-condensed">
+              {" "}
+              with a love for crafting efficient and elegant digital solutions.
+              I specialize in building responsive web applications, scalable
+              backend systems, and seamless user experiences. Based in{" "}
+            </span>
             <span
-              className="text-3xl hover:cursor-pointer"
+              className="text-3xl font-nunito font-bold text-primary hover:cursor-pointer"
               onMouseEnter={(e) => handleMouseEnter("Barcelona", e)}
               onMouseLeave={handleMouseLeave}
             >
-              {" "}
               Barcelona, Spain
-            </span>{" "}
+            </span>
             .
           </p>
         </div>

@@ -8,26 +8,18 @@ const CardSlideshow = ({ isDarkMode }) => {
   const data = [
     {
       title: "Battleship",
-      imgUrl: "/public/img/battleship-1.png",
+      imgUrl: "/img/battleship-1.png",
       chips: (
         <>
+          <Chip icon="/icons/html5-plain.svg" text="HTML" bgColor="light" />
+          <Chip icon="/icons/css3-plain.svg" text="CSS" bgColor="light" />
           <Chip
-            icon="/public/icons/html5-plain.svg"
-            text="HTML"
-            bgColor="light"
-          />
-          <Chip
-            icon="/public/icons/css3-plain.svg"
-            text="CSS"
-            bgColor="light"
-          />
-          <Chip
-            icon="/public/icons/javascript-original.svg"
+            icon="/icons/javascript-original.svg"
             text="JavaScript"
             bgColor="light"
           />
           <Chip
-            icon="/public/icons/webpack-plain.svg"
+            icon="/icons/webpack-plain.svg"
             text="Webpack"
             bgColor="light"
           />
@@ -39,24 +31,20 @@ const CardSlideshow = ({ isDarkMode }) => {
     },
     {
       title: "CV Editor",
-      imgUrl: "/public/img/cv-editor-1.png",
+      imgUrl: "/img/cv-editor-1.png",
       chips: (
         <>
           <Chip
-            icon="/public/icons/javascript-original.svg"
+            icon="/icons/javascript-original.svg"
             text="JavaScript"
             bgColor="light"
           />
+          <Chip icon="/icons/react-original.svg" text="React" bgColor="light" />
           <Chip
-            icon="/public/icons/react-original.svg"
-            text="React"
-            bgColor="light"
-          />
-          <Chip
-            icon="/public/icons/vitejs-plain.svg"
+            icon="/icons/vitejs-plain.svg"
             text="Vite"
             bgColor="light"
-            invertIcon="true"
+            invertIcon={true}
           />
         </>
       ),
@@ -66,40 +54,32 @@ const CardSlideshow = ({ isDarkMode }) => {
     },
     {
       title: "Linkeem",
-      imgUrl: `/public/img/linkeem-2-${isDarkMode ? "d" : "l"}.png`,
+      imgUrl: `/img/linkeem-2-${isDarkMode ? "d" : "l"}.png`,
       chips: (
         <>
           <Chip
-            icon="/public/icons/typescript-original.svg"
+            icon="/icons/typescript-original.svg"
             text="TypeScript"
             bgColor="light"
           />
+          <Chip icon="/icons/react-original.svg" text="React" bgColor="light" />
+          <Chip icon="/icons/ionic-original.svg" text="Ionic" bgColor="light" />
           <Chip
-            icon="/public/icons/react-original.svg"
-            text="React"
-            bgColor="light"
-          />
-          <Chip
-            icon="/public/icons/ionic-original.svg"
-            text="Ionic"
-            bgColor="light"
-          />
-          <Chip
-            icon="/public/icons/express-original.svg"
+            icon="/icons/express-original.svg"
             text="Express"
             bgColor="light"
-            invertIcon="true"
+            invertIcon={true}
           />
           <Chip
-            icon="/public/icons/postgresql-plain.svg"
+            icon="/icons/postgresql-plain.svg"
             text="PostgreSQL"
             bgColor="light"
           />
           <Chip
-            icon="/public/icons/prisma-original.svg"
+            icon="/icons/prisma-original.svg"
             text="Prisma"
             bgColor="light"
-            invertIcon="true"
+            invertIcon={true}
           />
         </>
       ),
@@ -112,39 +92,31 @@ const CardSlideshow = ({ isDarkMode }) => {
       chips: (
         <>
           <Chip
-            icon="/public/icons/javascript-original.svg"
+            icon="/icons/javascript-original.svg"
             text="JavaScript"
             bgColor="light"
           />
+          <Chip icon="/icons/react-original.svg" text="React" bgColor="light" />
           <Chip
-            icon="/public/icons/react-original.svg"
-            text="React"
-            bgColor="light"
-          />
-          <Chip
-            icon="/public/icons/express-original.svg"
+            icon="/icons/express-original.svg"
             text="Express"
             bgColor="light"
           />
+          <Chip icon="/icons/materialui-plain.svg" text="MUI" bgColor="light" />
           <Chip
-            icon="/public/icons/materialui-plain.svg"
-            text="MUI"
-            bgColor="light"
-          />
-          <Chip
-            icon="/public/icons/postgresql-plain.svg"
+            icon="/icons/postgresql-plain.svg"
             text="PostgreSQL"
             bgColor="light"
           />
           <Chip
-            icon="/public/icons/prisma-original.svg"
+            icon="/icons/prisma-original.svg"
             text="Prisma"
             bgColor="light"
-            invertIcon="true"
+            invertIcon={true}
           />
         </>
       ),
-      imgUrl: "/public/img/blog-authors-1.png",
+      imgUrl: "/img/blog-authors-1.png",
       description: "Multi-frontend Blog",
       liveUrl: "",
       repoUrl: "https://github.com/ruizterce/blog-api",
@@ -154,24 +126,20 @@ const CardSlideshow = ({ isDarkMode }) => {
       chips: (
         <>
           <Chip
-            icon="/public/icons/javascript-original.svg"
+            icon="/icons/javascript-original.svg"
             text="JavaScript"
             bgColor="light"
           />
+          <Chip icon="/icons/react-original.svg" text="React" bgColor="light" />
           <Chip
-            icon="/public/icons/react-original.svg"
-            text="React"
-            bgColor="light"
-          />
-          <Chip
-            icon="/public/icons/vitejs-plain.svg"
+            icon="/icons/vitejs-plain.svg"
             text="Vite"
             bgColor="light"
-            invertIcon="true"
+            invertIcon={true}
           />
         </>
       ),
-      imgUrl: "/public/img/pokemon-1.png",
+      imgUrl: "/img/pokemon-1.png",
       description: "Desc",
       liveUrl: "https://cardclicker.netlify.app",
       repoUrl: "https://github.com/ruizterce/card-clicker-game",
@@ -180,13 +148,10 @@ const CardSlideshow = ({ isDarkMode }) => {
 
   return (
     <div className="w-full flex flex-col justify-center items-center relative">
-      <h1
-        className="absolute text-3xl hidden sm:block"
-        style={{ transform: "translateY(-340px)" }}
-      >
+      <h1 className="absolute text-3xl font-nunito font-black text-secondary translate-y-[-260px] sm:translate-y-[-340px]">
         Work
       </h1>
-      <div className="w-full">
+      <div className="w-full translate-y-10 sm:translate-y-0">
         <Swiper
           effect={"coverflow"}
           modules={[EffectCoverflow, Pagination]}
@@ -204,24 +169,39 @@ const CardSlideshow = ({ isDarkMode }) => {
         >
           {data.map((project) => {
             return (
-              <SwiperSlide key={project.title} className="max-w-xs max-h-full">
+              <SwiperSlide
+                key={project.title}
+                className="max-w-xs sm:max-w-sm max-h-full"
+              >
                 <div className="swiper-slide-transform rounded-3xl bg-lightMild flex flex-col justify-center items-center ">
                   <img
                     src={project.imgUrl}
                     className="object-cover object-top w-full h-[300px] sm:h-[420px] rounded-t-3xl"
                   ></img>
 
-                  <div className="flex flex-wrap justify-center gap-2 m-2">
+                  <div className="flex flex-wrap justify-center gap-2 mx-2 mt-2 sm:mx-4 sm:mt-4">
                     {project.chips}
                   </div>
-                  <div className="w-full p-2 text-center">
-                    <h1 className="text-2xl">{project.title}</h1>
-                    <div className="my-2 flex w-full justify-around">
-                      <a href={project.liveUrl}>Live Site</a>
-                      <a href={project.repoUrl}>GitHub</a>
-                    </div>
+                  <div className="w-full flex flex-col items-center p-2">
+                    <h1 className="text-3xl font-nunito font-extrabold ">
+                      {project.title}
+                    </h1>
 
-                    <h1>{project.description}</h1>
+                    <h1 className="mb-2">{project.description}</h1>
+                    <div className="box-border flex w-5/6 mb-2 justify-around ">
+                      <a
+                        href={project.liveUrl}
+                        className="py-2 px-4 font-nunito bg-primary text-primaryContrast shadow-lg hover:bg-primaryContrast hover:text-primary active:shadow-none active:invert  font-black rounded-full"
+                      >
+                        LIVE SITE
+                      </a>
+                      <a
+                        href={project.repoUrl}
+                        className="py-2 px-4 font-nunito bg-primary text-primaryContrast shadow-lg hover:bg-primaryContrast hover:text-primary active:shadow-none active:invert font-black rounded-full"
+                      >
+                        GITHUB
+                      </a>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>

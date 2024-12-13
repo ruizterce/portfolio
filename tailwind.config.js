@@ -9,8 +9,9 @@ export default {
       defaultTheme: {
         extend: {
           colors: {
-            primary: "#3490dc",
-            secondary: "#ffed4a",
+            primary: "#f8958b",
+            primaryContrast: "#3d344d",
+            secondary: "#8c95f2",
             accent: "#38c172",
             light: "#f5f5f4",
             lightMild: "#e7e5e4",
@@ -20,6 +21,12 @@ export default {
             darkMild: "#292524",
             dark: "#1c1917",
           },
+          fontFamily: {
+            lato: ["Lato", "sans-serif"],
+            playfair: ["Playfair Display", "serif"],
+            nunito: ["Nunito", "sans-serif"],
+            nunitoSans: ["Nunito Sans", "sans-serif"],
+          },
         },
       },
       themes: [
@@ -28,8 +35,9 @@ export default {
           selectors: [".dark-mode"],
           extend: {
             colors: {
-              primary: "red",
-              secondary: "red",
+              primary: "#f8958b",
+              primaryContrast: "#3d344d",
+              secondary: "#34cba5",
               accent: "#14b8a6",
               light: "#1c1917",
               lightMild: "#292524",
