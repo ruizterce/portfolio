@@ -25,18 +25,18 @@ function App() {
         <Welcome />
       </Section>
       <Section id="section2">
-        <div className="h-full w-full bg-light text-dark flex flex-col items-center justify-center">
-          <CardSlideshow />
+        <div className="h-screen w-screen bg-light text-dark flex flex-col items-center justify-center">
+          <CardSlideshow isDarkMode={isDarkMode} />
         </div>
       </Section>
       <Section id="section3">
-        <div className="h-full w-full bg-light text-dark flex flex-col items-center justify-center">
+        <div className="h-screen w-screen bg-light text-dark flex flex-col items-center justify-center">
           <h1>Contact</h1>
           <p> Get in touch!</p>
         </div>
       </Section>
       <Section id="section4">
-        <div className="h-full w-full bg-light text-dark flex flex-col items-center justify-center">
+        <div className="h-screen w-screen bg-light text-dark flex flex-col items-center justify-center">
           <h1>More</h1>
           <p> More stuff!</p>
         </div>

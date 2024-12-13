@@ -155,10 +155,10 @@ const Welcome = () => {
         options={tiltOptions}
         className="h-full w-full flex justify-center items-center"
       >
-        <div className="m-6 text-center w-1/2 leading-10">
+        <div className="text-center w-5/6 sm:w-2/3 leading-10">
           <h1>Welcome!</h1>
           <p>
-            I&apos;m
+            I&apos;m{" "}
             <span
               className="text-5xl hover:cursor-pointer"
               onMouseEnter={(e) => handleMouseEnter("ruizterce", e)}
