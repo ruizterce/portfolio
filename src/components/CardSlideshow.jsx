@@ -149,14 +149,14 @@ const CardSlideshow = ({ currentSectionIndex, isDarkMode }) => {
   return (
     <div className="w-full flex flex-col justify-center items-center relative">
       <h1
-        className={`absolute text-3xl font-nunito font-black text-secondary translate-y-[-260px] sm:translate-y-[-310px] transition-all duration-700 ease-in-out ${
+        className={`absolute text-3xl font-nunito font-bold text-secondary translate-y-[-260px] sm:translate-y-[-310px] transition-all duration-700 ease-in-out ${
           currentSectionIndex === 1 ? "" : "-translate-x-[1000px] opacity-0"
         }`}
       >
         Work
       </h1>
       <div
-        className={`w-full translate-y-10 sm:translate-y-0transition-all duration-700 ease-in-out ${
+        className={`w-full translate-y-10 transition-all duration-700 ease-in-out ${
           currentSectionIndex === 1 ? "" : "translate-x-[1000px] opacity-0"
         }`}
       >
@@ -199,15 +199,23 @@ const CardSlideshow = ({ currentSectionIndex, isDarkMode }) => {
                     <div className="box-border flex w-5/6 mb-2 justify-around ">
                       <a
                         href={project.liveUrl}
-                        className="py-2 px-4 font-nunito bg-primary text-primaryContrast shadow-lg hover:bg-primaryContrast hover:text-primary active:shadow-none active:invert  font-black rounded-full"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="py-1 px-4 font-nunito bg-primary  shadow-md hover:bg-primaryContrast hover:text-primary active:shadow-none active:invert  font-black rounded-full"
                       >
-                        LIVE SITE
+                        <span className="text-lightMild text-shadow-sm shadow-gray-500">
+                          LIVE SITE
+                        </span>
                       </a>
                       <a
                         href={project.repoUrl}
-                        className="py-2 px-4 font-nunito bg-primary text-primaryContrast shadow-lg hover:bg-primaryContrast hover:text-primary active:shadow-none active:invert font-black rounded-full"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="py-1 px-4 font-nunito bg-primary shadow-md hover:bg-primaryContrast hover:text-primary active:shadow-none active:invert font-black rounded-full"
                       >
-                        GITHUB
+                        <span className="text-lightMild text-shadow-sm shadow-gray-500">
+                          GITHUB
+                        </span>
                       </a>
                     </div>
                   </div>

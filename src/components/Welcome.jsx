@@ -8,7 +8,17 @@ const Welcome = () => {
   const timeoutId = useRef(null);
 
   const hoverContent = {
-    ruizterce: <h1>Passionate about coding and problem-solving.</h1>,
+    ruizterce: (
+      <h1>
+        As an Industrial Design and Product Development engineer, I started my
+        career in the field of 3D printing. Over the years, I’ve taken on roles
+        in product development, technical support, teaching, and plant
+        management, gaining both technical and leadership skills. Witnessing the
+        vast potential of web technologies to drive innovation, I found my
+        passion in web development, where I now focus on creating impactful and
+        scalable solutions.
+      </h1>
+    ),
     "Full Stack Dev": (
       <div className="grid grid-cols-3 gap-4">
         <img
@@ -148,7 +158,7 @@ const Welcome = () => {
         className="h-full w-full flex justify-center items-center"
       >
         <div className="text-center w-5/6 sm:w-2/3 sm:text-xl">
-          <h1 className="text-3xl font-nunitoSans font-bold text-secondary transition-all duration-700">
+          <h1 className="text-3xl font-nunito font-bold text-secondary transition-all duration-700">
             Welcome!
           </h1>
           <p>
@@ -187,20 +197,23 @@ const Welcome = () => {
           </p>
         </div>
       </Tilt>
-
       {/* Hover Card */}
       {hoveredWord && (
         <div
-          className={`absolute z-10 bg-light text-dark shadow-lg p-4 rounded transition-all duration-500 ease-out darkTheme:border border-dark ${
+          className={`absolute z-10 max-w-[600px] sm:-translate-y-1/2 bg-light text-dark shadow-lg p-4 rounded transition-all duration-500 ease-out text-justify darkTheme:border border-dark ${
             showCard ? "scale-100 opacity-1" : "scale-0 opacity-0"
-          }`}
-          style={{
-            left: `${cardPosition.x + 50}px`,
-            top: `${cardPosition.y - 50}px`,
-            transformOrigin: "left",
-          }}
+          } ${window.innerWidth < 640 ? "fixed bottom-4 left-4 right-4" : ""}`}
+          style={
+            window.innerWidth >= 640
+              ? {
+                  left: `${cardPosition.x + 40}px`,
+                  top: `${cardPosition.y}px`,
+                  transformOrigin: "left",
+                }
+              : {}
+          }
         >
-          {hoverContent[hoveredWord]}
+          <div>{hoverContent[hoveredWord]}</div>
         </div>
       )}
     </div>
