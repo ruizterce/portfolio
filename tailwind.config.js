@@ -27,6 +27,9 @@ export default {
             nunito: ["Nunito", "sans-serif"],
             nunitoSans: ["Nunito Sans", "sans-serif"],
           },
+          dropShadow: {
+            primary: "0 0 5px #f8958b",
+          },
         },
       },
       themes: [

@@ -4,16 +4,16 @@ const Navbar = ({ currentSectionIndex, scrollToSection }) => {
   const sections = ["Welcome", "Projects", "Contact", "More"];
 
   return (
-    <div className="fixed flex h-screen items-start">
-      <nav className="top-0 z-[1000] p-4">
+    <div className="fixed z-[1000] flex h-screen items-start">
+      <nav className="top-0 p-4">
         <ul className="flex flex-col justify-center list-none">
           {sections.map((section, index) => (
             <li key={section} className="mx-1 sm:mx-4">
               <button
                 onClick={() => scrollToSection(index)}
-                className={`bg-none border-none cursor-pointer text-lg w-full flex justify-end items-center gap-2 ${
+                className={`bg-none border-none cursor-pointer text-lg w-full flex justify-end items-center gap-2 transition-all duration-500 ${
                   currentSectionIndex === index
-                    ? "text-dark"
+                    ? "text-dark translate-x-1 sm:scale-[1.1]"
                     : "text-lightMedium"
                 }`}
               >

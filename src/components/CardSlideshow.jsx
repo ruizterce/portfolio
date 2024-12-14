@@ -4,7 +4,7 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import Chip from "./Chip";
 import PropTypes from "prop-types";
 
-const CardSlideshow = ({ isDarkMode }) => {
+const CardSlideshow = ({ currentSectionIndex, isDarkMode }) => {
   const data = [
     {
       title: "Battleship",
@@ -148,10 +148,18 @@ const CardSlideshow = ({ isDarkMode }) => {
 
   return (
     <div className="w-full flex flex-col justify-center items-center relative">
-      <h1 className="absolute text-3xl font-nunito font-black text-secondary translate-y-[-260px] sm:translate-y-[-340px]">
+      <h1
+        className={`absolute text-3xl font-nunito font-black text-secondary translate-y-[-260px] sm:translate-y-[-310px] transition-all duration-700 ease-in-out ${
+          currentSectionIndex === 1 ? "" : "-translate-x-[1000px] opacity-0"
+        }`}
+      >
         Work
       </h1>
-      <div className="w-full translate-y-10 sm:translate-y-0">
+      <div
+        className={`w-full translate-y-10 sm:translate-y-0transition-all duration-700 ease-in-out ${
+          currentSectionIndex === 1 ? "" : "translate-x-[1000px] opacity-0"
+        }`}
+      >
         <Swiper
           effect={"coverflow"}
           modules={[EffectCoverflow, Pagination]}
@@ -214,6 +222,7 @@ const CardSlideshow = ({ isDarkMode }) => {
 };
 
 CardSlideshow.propTypes = {
+  currentSectionIndex: PropTypes.number,
   isDarkMode: PropTypes.bool,
 };
 
