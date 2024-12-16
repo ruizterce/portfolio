@@ -10,13 +10,12 @@ const Welcome = () => {
   const hoverContent = {
     ruizterce: (
       <h1>
-        As an Industrial Design and Product Development engineer, I started my
-        career in the field of 3D printing. Over the years, I’ve taken on roles
-        in product development, technical support, teaching, and plant
-        management, gaining both technical and leadership skills. Witnessing the
-        vast potential of web technologies to drive innovation, I found my
-        passion in web development, where I now focus on creating impactful and
-        scalable solutions.
+        As an Industrial Design and Product Development engineer, my journey
+        through product design and manufacturing has shaped my expertise in
+        systems, processes, QA, visual language, and user experience. Inspired
+        by the transformative power of web technologies, I discovered my passion
+        for web development, where I now focus on creating impactful and
+        scalable solutions with thoughtful design.
       </h1>
     ),
     "Full Stack Dev": (
@@ -99,15 +98,11 @@ const Welcome = () => {
       </div>
     ),
     Barcelona: (
-      <div className="grid grid-cols-3 gap-2">
-        <img
-          src="/icons/barcelona-sagrada.svg"
-          alt="Sagrada Familia"
-          className="h-16 w-auto darkTheme:invert"
-        />
-        <img src="/icons/es-ct.svg" alt="Catalonia" className="h-16 w-auto" />
-        <img src="/icons/es.svg" alt="Spain" className="h-16 w-auto" />
-      </div>
+      <img
+        src="img/pexels-apasaric-1388030.jpg"
+        alt="Sagrada Familia"
+        className="h-100 w-auto darkTheme:invert"
+      />
     ),
   };
 
@@ -138,10 +133,10 @@ const Welcome = () => {
 
   const tiltOptions = {
     reverse: true,
-    max: 35,
-    perspective: 1000,
+    max: 20,
+    perspective: 900,
     scale: 1,
-    speed: 3000,
+    speed: 10000,
     transition: true,
     axis: null,
     reset: false,
@@ -150,21 +145,21 @@ const Welcome = () => {
 
   return (
     <div
-      className="h-full w-full bg-light text-dark flex flex-col items-center justify-center"
+      className="h-screen w-screen bg-light text-dark flex flex-col items-center justify-center"
       onMouseMove={handleMouseMove}
     >
       <Tilt
         options={tiltOptions}
-        className="absolute h-full w-full flex justify-center items-center"
+        className="relative h-full w-full flex justify-center items-center"
       >
         <div className="text-center w-5/6 sm:w-2/3 sm:text-xl">
-          <h1 className="text-3xl font-nunito font-bold text-secondary transition-all duration-700">
+          <h1 className="text-2xl sm:text-3xl font-nunito font-bold text-secondary transition-all duration-700">
             Welcome!
           </h1>
-          <p>
+          <p className="leading-8">
             <span className="font-nunitoSans font-condensed">I&apos;m </span>
             <span
-              className="text-4xl font-nunito font-bold text-primary hover:cursor-pointer"
+              className="text-3xl sm:text-4xl font-nunito font-bold text-primary hover:cursor-pointer"
               onMouseEnter={(e) => handleMouseEnter("ruizterce", e)}
               onMouseLeave={handleMouseLeave}
             >
@@ -174,7 +169,7 @@ const Welcome = () => {
               , a passionate{" "}
             </span>
             <span
-              className="text-4xl font-nunito font-bold text-primary hover:cursor-pointer font-nunito"
+              className="text-2xl sm:text-4xl font-nunito font-bold text-primary hover:cursor-pointer font-nunito"
               onMouseEnter={(e) => handleMouseEnter("Full Stack Dev", e)}
               onMouseLeave={handleMouseLeave}
             >
@@ -183,11 +178,11 @@ const Welcome = () => {
             <span className="font-nunitoSans font-condensed">
               {" "}
               with a love for crafting efficient and elegant digital solutions.
-              I specialize in building responsive web applications, scalable
-              backend systems, and seamless user experiences. Based in{" "}
+              I focus on building responsive web applications, scalable backend
+              systems, and seamless user experiences. Based in{" "}
             </span>
             <span
-              className="text-3xl font-nunito font-bold text-primary hover:cursor-pointer"
+              className="text-2xl sm:text-3xl font-nunito font-bold text-primary hover:cursor-pointer"
               onMouseEnter={(e) => handleMouseEnter("Barcelona", e)}
               onMouseLeave={handleMouseLeave}
             >
