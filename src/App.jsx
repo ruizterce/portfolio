@@ -34,7 +34,7 @@ function App() {
       />
 
       <Section id="Welcome">
-        <Welcome />
+        <Welcome isDarkMode={isDarkMode} />
       </Section>
       <Section id="Projects">
         <CardSlideshow

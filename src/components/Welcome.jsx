@@ -1,7 +1,8 @@
 import { Tilt } from "react-tilt";
 import { useState, useRef } from "react";
+import PropTypes from "prop-types";
 
-const Welcome = () => {
+const Welcome = ({ isDarkMode }) => {
   const [hoveredWord, setHoveredWord] = useState(null);
   const [cardPosition, setCardPosition] = useState({ x: 0, y: 0 });
   const [showCard, setshowCard] = useState(false);
@@ -9,14 +10,21 @@ const Welcome = () => {
 
   const hoverContent = {
     ruizterce: (
-      <h1>
-        As an Industrial Design and Product Development engineer, my journey
-        through product design and manufacturing has shaped my expertise in
-        systems, processes, QA, visual language, and user experience. Inspired
-        by the transformative power of web technologies, I discovered my passion
-        for web development, where I now focus on creating impactful and
-        scalable solutions with thoughtful design.
-      </h1>
+      <div className="max-w-[350px] flex flex-col items-center gap-4">
+        <img
+          src="img/avatar2.jpeg"
+          alt="Author's portrait"
+          className="h-auto"
+        />
+        <h1>
+          As an Industrial Design and Product Development engineer, my journey
+          through product design and manufacturing has shaped my expertise in
+          systems, processes, QA, visual language, and user experience. Inspired
+          by the transformative power of web technologies, I discovered my
+          passion for web development, where I now focus on creating impactful
+          and scalable solutions with thoughtful design.
+        </h1>
+      </div>
     ),
     "Full Stack Dev": (
       <div className="grid grid-cols-3 gap-4">
@@ -99,9 +107,13 @@ const Welcome = () => {
     ),
     Barcelona: (
       <img
-        src="img/pexels-apasaric-1388030.jpg"
+        src={`${
+          isDarkMode
+            ? "img/pexels-omar-ramadan-1739260-12951693.jpg"
+            : "img/pexels-apasaric-1388030.jpg"
+        }`}
         alt="Sagrada Familia"
-        className="h-100 w-auto darkTheme:invert"
+        className="h-100 w-auto rounded-xl"
       />
     ),
   };
@@ -195,15 +207,22 @@ const Welcome = () => {
       {/* Hover Card */}
       {hoveredWord && (
         <div
-          className={`absolute z-10 max-w-[600px] sm:-translate-y-1/2 bg-light text-dark shadow-lg p-4 rounded transition-all duration-500 ease-out text-justify darkTheme:border border-dark ${
+          className={`absolute z-10 max-w-[600px] sm:-translate-y-1/2 bg-light text-dark shadow-lg p-4 rounded-xl transition-all duration-500 ease-out text-justify darkTheme:border border-dark ${
             showCard ? "scale-100 opacity-1" : "scale-0 opacity-0"
           } ${window.innerWidth < 640 ? "fixed bottom-4 left-4 right-4" : ""}`}
           style={
             window.innerWidth >= 640
               ? {
-                  left: `${cardPosition.x + 40}px`,
+                  [cardPosition.x > window.innerWidth / 2
+                    ? "right"
+                    : "left"]: `${
+                    cardPosition.x > window.innerWidth / 2
+                      ? Math.abs(cardPosition.x - window.innerWidth - 100)
+                      : Math.abs(cardPosition.x + 100)
+                  }px`,
                   top: `${cardPosition.y}px`,
-                  transformOrigin: "left",
+                  transformOrigin:
+                    cardPosition.x > window.innerWidth / 2 ? "right" : "left",
                 }
               : {}
           }
@@ -213,6 +232,10 @@ const Welcome = () => {
       )}
     </div>
   );
+};
+
+Welcome.propTypes = {
+  isDarkMode: PropTypes.bool,
 };
 
 export default Welcome;
