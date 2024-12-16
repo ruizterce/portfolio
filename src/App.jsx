@@ -6,8 +6,10 @@ import useScrollNavigation from "./hooks/useScrollNavigation";
 import Welcome from "./components/Welcome";
 import CardSlideshow from "./components/CardSlideshow";
 import SocialBar from "./components/SocialBar";
+import Contact from "./components/Contact";
+import Resume from "./components/Resume";
 
-const sections = ["section1", "section2", "section3", "section4"];
+const sections = ["Welcome", "Projects", "Contact", "Resume"];
 
 function App() {
   const { currentSectionIndex, scrollToSection } =
@@ -26,41 +28,25 @@ function App() {
         isDarkMode={isDarkMode}
       />
       <Navbar
+        sections={sections}
         currentSectionIndex={currentSectionIndex}
         scrollToSection={scrollToSection}
       />
 
-      <Section id="section1">
+      <Section id="Welcome">
         <Welcome />
       </Section>
-      <Section id="section2">
-        <div className="h-screen w-screen bg-light text-dark flex flex-col items-center justify-center">
-          <CardSlideshow
-            currentSectionIndex={currentSectionIndex}
-            isDarkMode={isDarkMode}
-          />
-        </div>
+      <Section id="Projects">
+        <CardSlideshow
+          currentSectionIndex={currentSectionIndex}
+          isDarkMode={isDarkMode}
+        />
       </Section>
-      <Section id="section3">
-        <div className="h-screen w-screen bg-light flex flex-col items-center justify-center">
-          <div className="relative h-full flex flex-col items-center">
-            <span
-              className={`text-medium absolute bottom-20 transition-all duration-1000 ${
-                currentSectionIndex === 2
-                  ? "opacity-1 translate-y-12"
-                  : "scale-0 opacity-0 -translate-y-12"
-              }`}
-            >
-              ruiz.terce@gmail.com
-            </span>
-          </div>
-        </div>
+      <Section id="Contact">
+        <Contact currentSectionIndex={currentSectionIndex} />
       </Section>
-      <Section id="section4">
-        <div className="h-screen w-screen bg-light text-dark flex flex-col items-center justify-center">
-          <h1>More</h1>
-          <p> More stuff!</p>
-        </div>
+      <Section id="Resume">
+        <Resume />
       </Section>
     </div>
   );

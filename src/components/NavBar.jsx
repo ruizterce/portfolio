@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 
-const Navbar = ({ currentSectionIndex, scrollToSection }) => {
-  const sections = ["Welcome", "Projects", "Contact", "More"];
-
+const Navbar = ({ sections, currentSectionIndex, scrollToSection }) => {
   return (
     <div className="fixed z-[1000] flex h-screen items-start">
       <nav className="top-0 p-4">
@@ -18,7 +16,7 @@ const Navbar = ({ currentSectionIndex, scrollToSection }) => {
                 }`}
               >
                 <span className="hidden sm:block">
-                  {section.charAt(0).toUpperCase() + section.slice(1)}{" "}
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
                 </span>
 
                 <span
@@ -38,6 +36,7 @@ const Navbar = ({ currentSectionIndex, scrollToSection }) => {
 };
 
 Navbar.propTypes = {
+  sections: PropTypes.array.isRequired,
   currentSectionIndex: PropTypes.number.isRequired,
   scrollToSection: PropTypes.func.isRequired,
 };

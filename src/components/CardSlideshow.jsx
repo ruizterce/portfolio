@@ -147,7 +147,7 @@ const CardSlideshow = ({ currentSectionIndex, isDarkMode }) => {
   ];
 
   return (
-    <div className="w-full flex flex-col justify-center items-center relative">
+    <div className="h-screen w-screen bg-light text-dark flex flex-col items-center justify-center">
       <h1
         className={`absolute text-3xl font-nunito font-bold text-secondary translate-y-[-260px] sm:translate-y-[-310px] transition-all duration-700 ease-in-out ${
           currentSectionIndex === 1 ? "" : "-translate-x-[1000px] opacity-0"
