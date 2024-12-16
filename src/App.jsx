@@ -46,7 +46,7 @@ function App() {
         <Contact currentSectionIndex={currentSectionIndex} />
       </Section>
       <Section id="Resume">
-        <Resume />
+        <Resume isDarkMode={isDarkMode} />
       </Section>
     </div>
   );

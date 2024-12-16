@@ -155,7 +155,7 @@ const Welcome = () => {
     >
       <Tilt
         options={tiltOptions}
-        className="h-full w-full flex justify-center items-center"
+        className="absolute h-full w-full flex justify-center items-center"
       >
         <div className="text-center w-5/6 sm:w-2/3 sm:text-xl">
           <h1 className="text-3xl font-nunito font-bold text-secondary transition-all duration-700">
