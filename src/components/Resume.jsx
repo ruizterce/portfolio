@@ -1,13 +1,17 @@
 import PropTypes from "prop-types";
 
-const Resume = ({ isDarkMode }) => {
+const Resume = ({ isCurrentSection, isDarkMode }) => {
   const openResume = () => {
     window.open("files/Cv 2025 English.pdf", "_blank");
   };
 
   return (
     <div className="h-screen w-screen bg-light text-dark flex flex-col items-center justify-center">
-      <div className="absolute h-full w-full flex flex-col items-center justify-center">
+      <div
+        className={`absolute h-full w-full flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${
+          isCurrentSection ? "" : "-translate-x-[1000px] opacity-0"
+        }`}
+      >
         <img
           onClick={openResume}
           src={`/img/Cv 2025 English-${isDarkMode ? "dark-" : ""}p.svg`}
@@ -22,6 +26,7 @@ const Resume = ({ isDarkMode }) => {
 };
 
 Resume.propTypes = {
+  isCurrentSection: PropTypes.bool,
   isDarkMode: PropTypes.bool,
 };
 

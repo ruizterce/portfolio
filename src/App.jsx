@@ -38,15 +38,18 @@ function App() {
       </Section>
       <Section id="Projects">
         <CardSlideshow
-          currentSectionIndex={currentSectionIndex}
+          isCurrentSection={currentSectionIndex === 1}
           isDarkMode={isDarkMode}
         />
       </Section>
       <Section id="Contact">
-        <Contact currentSectionIndex={currentSectionIndex} />
+        <Contact isCurrentSection={currentSectionIndex === 2} />
       </Section>
       <Section id="Resume">
-        <Resume isDarkMode={isDarkMode} />
+        <Resume
+          isCurrentSection={currentSectionIndex === 3}
+          isDarkMode={isDarkMode}
+        />
       </Section>
     </div>
   );
