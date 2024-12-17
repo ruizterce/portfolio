@@ -10,17 +10,15 @@ const Contact = ({ isCurrentSection }) => {
       >
         Contact
       </h1>
-      <div className="relative h-full flex flex-col items-center">
-        <span
-          className={`text-medium absolute bottom-60 transition-all duration-1000 ${
-            isCurrentSection
-              ? "opacity-1 translate-y-16"
-              : "scale-0 opacity-0 -translate-y-16"
-          }`}
-        >
-          ruiz.terce@gmail.com
-        </span>
-      </div>
+      <span
+        className={`text-medium transition-all duration-1000 ${
+          isCurrentSection
+            ? "opacity-1 translate-y-60 sm:translate-y-72"
+            : "scale-0 opacity-0 -translate-y-16"
+        }`}
+      >
+        ruiz.terce@gmail.com
+      </span>
     </div>
   );
 };
