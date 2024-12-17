@@ -35,12 +35,12 @@ const Navbar = ({ sections, currentSectionIndex, scrollToSection }) => {
               }`}
             ></span>
             <span
-              className={`hidden sm:block absolute left-10 text-lg transition-all duration-500 ${
+              className={`hidden sm:block absolute left-10 font-nunito text-lg transition-all duration-500 ${
                 isCol ? "opacity-1" : "opacity-0"
               } ${
                 currentSectionIndex === index
-                  ? "text-dark scale-[1.2] translate-x-2"
-                  : "text-lightMedium"
+                  ? "text-medium font-black scale-[1.2] translate-x-2"
+                  : "text-lightMedium font-medium"
               }`}
             >
               {isCol ? section.charAt(0).toUpperCase() + section.slice(1) : ""}
