@@ -4,7 +4,7 @@ const Contact = ({ isCurrentSection }) => {
   return (
     <div className="h-screen w-screen bg-light flex flex-col items-center justify-center">
       <h1
-        className={`absolute text-3xl font-nunito font-bold text-secondary translate-y-[-180px] transition-all duration-700 ease-in-out ${
+        className={`absolute text-3xl font-nunito font-black text-secondary translate-y-[-180px] transition-all duration-700 ease-in-out ${
           isCurrentSection ? "" : "-translate-y-[3000px] scale-0 opacity-0"
         }`}
       >

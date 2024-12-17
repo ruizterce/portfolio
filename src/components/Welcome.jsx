@@ -2,7 +2,7 @@ import { Tilt } from "react-tilt";
 import { useState, useRef } from "react";
 import PropTypes from "prop-types";
 
-const Welcome = ({ isDarkMode }) => {
+const Welcome = ({ isCurrentSection, isDarkMode }) => {
   const [hoveredWord, setHoveredWord] = useState(null);
   const [cardPosition, setCardPosition] = useState({ x: 0, y: 0 });
   const [showCard, setshowCard] = useState(false);
@@ -162,45 +162,53 @@ const Welcome = ({ isDarkMode }) => {
     >
       <Tilt
         options={tiltOptions}
-        className="relative h-full w-full flex justify-center items-center"
+        className="relative h-full w-5/6 flex justify-center items-center"
       >
-        <div className="text-center w-5/6 sm:w-2/3 sm:text-xl">
-          <h1 className="text-2xl sm:text-3xl font-nunito font-bold text-secondary transition-all duration-700">
-            Welcome!
-          </h1>
-          <p className="leading-8">
-            <span className="font-nunitoSans font-condensed">I&apos;m </span>
+        <div className="text-center w-5/6 sm:w-2/3 text-xl flex flex-col items-center">
+          <p className="leading-5">
+            <h1 className="text-4xl font-nunito font-black text-secondary tracking-[0.11em] leading-[2em]">
+              Welcome!
+            </h1>
+            <span className="text-2xl font-nunitoSans font-thin text-center tracking-[0.05em] leading-[0.3em]">
+              I&apos;m{" "}
+            </span>
             <span
-              className="text-3xl sm:text-4xl font-nunito font-bold text-primary hover:cursor-pointer"
+              className={`text-4xl font-nunito font-black text-primary text-justify tracking-[0.02em] leading-[0.3em] drop-shadow hover:cursor-pointer hover:drop-shadow-primary inline-block transition-all duration-[600ms] ease-in-out ${
+                isCurrentSection ? "" : "translate-x-[1000px]"
+              }`}
               onMouseEnter={(e) => handleMouseEnter("ruizterce", e)}
               onMouseLeave={handleMouseLeave}
             >
               ruizterce
             </span>
-            <span className="font-nunitoSans font-condensed">
-              , a passionate{" "}
+            <br />
+            <span className="font-nunitoSans  font-thin text-[1.4em] tracking-[0.155em] leading-[1.1em]">
+              a passionate
             </span>
-            <span
-              className="text-2xl sm:text-4xl font-nunito font-bold text-primary hover:cursor-pointer font-nunito"
+            <br />
+            <p
+              className={`w-max text-4xl font-nunito font-extrabold text-primary tracking-[0.1em] leading-[1em] drop-shadow hover:cursor-pointer hover:drop-shadow-primary block transition-all duration-700 ease-in-out ${
+                isCurrentSection ? "" : "-translate-x-[1000px]"
+              }`}
               onMouseEnter={(e) => handleMouseEnter("Full Stack Dev", e)}
               onMouseLeave={handleMouseLeave}
             >
-              Full Stack Developer
+              <span>Full Stack </span> <br />
+              <span>Developer</span>
+            </p>
+            <span className="font-nunitoSans  font-thin text-[1.4em] tracking-[0.096em] leading-[1em]">
+              established in
             </span>
-            <span className="font-nunitoSans font-condensed">
-              {" "}
-              with a love for crafting efficient and elegant digital solutions.
-              I focus on building responsive web applications, scalable backend
-              systems, and seamless user experiences. Based in{" "}
-            </span>
+            <br />
             <span
-              className="text-2xl sm:text-3xl font-nunito font-bold text-primary hover:cursor-pointer"
+              className={`text-4xl font-nunito font-black text-primary tracking-[0.11em] drop-shadow hover:cursor-pointer hover:drop-shadow-primary block transition-all duration-[900ms] ease-in-out ${
+                isCurrentSection ? "" : "translate-x-[1000px]"
+              }`}
               onMouseEnter={(e) => handleMouseEnter("Barcelona", e)}
               onMouseLeave={handleMouseLeave}
             >
-              Barcelona, Spain
+              Barcelona
             </span>
-            .
           </p>
         </div>
       </Tilt>
@@ -235,6 +243,7 @@ const Welcome = ({ isDarkMode }) => {
 };
 
 Welcome.propTypes = {
+  isCurrentSection: PropTypes.bool,
   isDarkMode: PropTypes.bool,
 };
 

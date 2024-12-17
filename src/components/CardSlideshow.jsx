@@ -149,7 +149,7 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
   return (
     <div className="h-screen w-screen bg-light text-dark flex flex-col items-center justify-center">
       <h1
-        className={`absolute text-3xl font-nunito font-bold text-secondary translate-y-[-260px] sm:translate-y-[-310px] transition-all duration-700 ease-in-out ${
+        className={`absolute text-3xl font-nunito font-black text-secondary translate-y-[-260px] sm:translate-y-[-310px] transition-all duration-700 ease-in-out ${
           isCurrentSection ? "" : "-translate-x-[1000px] opacity-0"
         }`}
       >
