@@ -48,7 +48,7 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
           />
         </>
       ),
-      description: "Classic Game",
+      description: "Create your CV Tool",
       liveUrl: "https://ruizterce-cv-editor.netlify.app/",
       repoUrl: "https://github.com/ruizterce/cv-editor",
     },
@@ -140,7 +140,7 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
         </>
       ),
       imgUrl: "/img/pokemon-1.png",
-      description: "Desc",
+      description: "Memory Game",
       liveUrl: "https://cardclicker.netlify.app",
       repoUrl: "https://github.com/ruizterce/card-clicker-game",
     },
