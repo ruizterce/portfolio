@@ -1,37 +1,54 @@
 import PropTypes from "prop-types";
 
 const Navbar = ({ sections, currentSectionIndex, scrollToSection }) => {
+  const isCol = currentSectionIndex !== 1;
   return (
-    <div className="fixed z-[1000] flex h-screen items-start">
-      <nav className="top-0 p-4">
-        <ul className="flex flex-col justify-center list-none">
-          {sections.map((section, index) => (
-            <li key={section} className="mx-1 sm:mx-4">
-              <button
-                onClick={() => scrollToSection(index)}
-                className={`bg-none border-none cursor-pointer text-lg w-full flex justify-end items-center gap-2 transition-all duration-500 ${
-                  currentSectionIndex === index
-                    ? "text-dark translate-x-1 sm:scale-[1.1]"
-                    : "text-lightMedium"
-                }`}
-              >
-                <span className="hidden sm:block">
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </span>
+    <nav className="fixed top-4 left-6 z-[1000] flex flex-wrap flex-row w-[72px] sm:w-[88px] gap-2 transition-transform duration-1000  origin-center ">
+      {sections.map((section, index) => {
+        const getTransformClass = () => {
+          if (!isCol) return "";
 
-                <span
-                  className={` h-1 w-1 sm:h-2 sm:w-2 my-1 sm:my-2 rounded inline-block ${
-                    currentSectionIndex === index
-                      ? "bg-primary ring ring-medium"
-                      : "ring ring-2 ring-lightMedium"
-                  }`}
-                ></span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
+          // Define transformations for specific indexes
+          switch (index) {
+            case 1:
+              return "-translate-x-10 translate-y-10  sm:translate-y-12";
+            case 2:
+              return "translate-y-10 sm:translate-y-12";
+            case 3:
+              return "-translate-x-10 translate-y-20 sm:translate-y-24";
+            default:
+              return "";
+          }
+        };
+
+        return (
+          <button
+            key={section}
+            onClick={() => scrollToSection(index)}
+            className={`bg-none border-none cursor-pointer flex items-center gap-2 border  transition-all duration-500 ${getTransformClass()} `}
+          >
+            <span
+              className={`h-8 w-8 sm:my-1 rounded-full transition-all duration-500 ${
+                currentSectionIndex === index
+                  ? "bg-primary border-4 border-medium"
+                  : "border-2 border-lightMedium"
+              }`}
+            ></span>
+            <span
+              className={`hidden sm:block absolute left-10 text-lg transition-all duration-500 ${
+                isCol ? "opacity-1" : "opacity-0"
+              } ${
+                currentSectionIndex === index
+                  ? "text-dark scale-[1.2] translate-x-2"
+                  : "text-lightMedium"
+              }`}
+            >
+              {isCol ? section.charAt(0).toUpperCase() + section.slice(1) : ""}
+            </span>
+          </button>
+        );
+      })}
+    </nav>
   );
 };
 
