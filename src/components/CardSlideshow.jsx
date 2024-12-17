@@ -195,28 +195,36 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
                       {project.title}
                     </h1>
 
-                    <h1 className="mb-2">{project.description}</h1>
+                    <h1 className="mb-2 font-light">{project.description}</h1>
                     <div className="box-border flex w-5/6 mb-2 justify-around ">
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="py-1 px-4 font-nunito bg-primary  shadow-md hover:bg-primaryContrast hover:text-primary active:shadow-none active:invert  font-black rounded-full"
-                      >
-                        <span className="text-lightMild text-shadow-sm shadow-gray-500">
-                          LIVE SITE
-                        </span>
-                      </a>
-                      <a
-                        href={project.repoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="py-1 px-4 font-nunito bg-primary shadow-md hover:bg-primaryContrast hover:text-primary active:shadow-none active:invert font-black rounded-full"
-                      >
-                        <span className="text-lightMild text-shadow-sm shadow-gray-500">
-                          GITHUB
-                        </span>
-                      </a>
+                      {project.liveUrl ? (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="py-1 px-4 font-nunito bg-primary drop-shadow hover:scale-[1.05] hover:drop-shadow-primary active:shadow-none active:bg-medium active:scale-[0.9] font-black rounded-full transition-all duration-200"
+                        >
+                          <span className="text-lightMild text-shadow-sm shadow-gray-500 active:shadow-primary">
+                            LIVE SITE
+                          </span>
+                        </a>
+                      ) : (
+                        <></>
+                      )}
+                      {project.repoUrl ? (
+                        <a
+                          href={project.repoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="py-1 px-4 font-nunito bg-primary drop-shadow hover:scale-[1.05] hover:drop-shadow-primary active:shadow-none active:bg-medium active:scale-[0.9] font-black rounded-full transition-all duration-200"
+                        >
+                          <span className="text-lightMild text-shadow-sm shadow-gray-500 active:shadow-primary">
+                            GITHUB
+                          </span>
+                        </a>
+                      ) : (
+                        <></>
+                      )}
                     </div>
                   </div>
                 </div>

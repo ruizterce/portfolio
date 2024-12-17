@@ -29,13 +29,13 @@ const SocialBar = ({ currentSectionIndex, isDarkMode }) => {
     if (isContactSection) {
       switch (index) {
         case 0:
-          return "translate-x-16 sm:translate-x-20 -translate-y-20 scale-[3] hover:scale-x-[4] hover:scale-y-[4] drop-shadow-lg";
+          return "translate-x-16 sm:translate-x-20 -translate-y-20 scale-[3] hover:scale-[4] active:scale-[2.5] drop-shadow-lg";
         case 1:
-          return "-translate-x-16 sm:-translate-x-20 -translate-y-20 scale-[3] hover:scale-x-[4] hover:scale-y-[4] drop-shadow-lg";
+          return "-translate-x-16 sm:-translate-x-20 -translate-y-20 scale-[3] hover:scale-[4] active:scale-[2.5] drop-shadow-lg";
         case 2:
-          return "translate-x-16 sm:translate-x-20 translate-y-20 scale-[3] hover:scale-x-[4] hover:scale-y-[4] drop-shadow-lg";
+          return "translate-x-16 sm:translate-x-20 translate-y-20 scale-[3] hover:scale-[4] active:scale-[2.5] drop-shadow-lg";
         case 3:
-          return "-translate-x-16 sm:-translate-x-20 translate-y-20 scale-[3] hover:scale-x-[4] hover:scale-y-[4] drop-shadow-lg";
+          return "-translate-x-16 sm:-translate-x-20 translate-y-20 scale-[3] hover:scale-[4] active:scale-[2.5] drop-shadow-lg";
         default:
           return "";
       }
