@@ -1,8 +1,58 @@
 import PropTypes from "prop-types";
 
 const SocialBar = ({ currentSectionIndex, isDarkMode }) => {
+  const contactIcons = [
+    {
+      icon: "/icons/github-original.svg",
+      onClick: () => window.open("https://github.com/ruizterce/"),
+    },
+    {
+      icon: "/icons/mail.svg",
+      onClick: () => window.open("mailto:ruiz.terce@gmail.com"),
+    },
+    {
+      icon: "/icons/linkedin-plain.svg",
+      onClick: () =>
+        window.open("https://www.linkedin.com/in/manuel-ruiz-tercedor/"),
+    },
+    {
+      icon: "/icons/discord-mark-black.svg",
+      onClick: () => window.open("https://discord.com/users/ruizterce"),
+    },
+  ];
+
   const isCol = currentSectionIndex === 0 || currentSectionIndex === 3; // Transform into column
   const isContactSection = currentSectionIndex === 2; // Transform into contact section
+
+  // Function to get transform class for each button
+  const getTransformClass = (index) => {
+    if (isContactSection) {
+      switch (index) {
+        case 0:
+          return "translate-x-16 sm:translate-x-20 -translate-y-20 scale-[3] hover:scale-x-[4] hover:scale-y-[4] drop-shadow-lg";
+        case 1:
+          return "-translate-x-16 sm:-translate-x-20 -translate-y-20 scale-[3] hover:scale-x-[4] hover:scale-y-[4] drop-shadow-lg";
+        case 2:
+          return "translate-x-16 sm:translate-x-20 translate-y-20 scale-[3] hover:scale-x-[4] hover:scale-y-[4] drop-shadow-lg";
+        case 3:
+          return "-translate-x-16 sm:-translate-x-20 translate-y-20 scale-[3] hover:scale-x-[4] hover:scale-y-[4] drop-shadow-lg";
+        default:
+          return "";
+      }
+    } else if (isCol) {
+      switch (index) {
+        case 1:
+          return "translate-y-10 translate-x-10 sm:translate-y-12 sm:translate-x-12";
+        case 2:
+          return "translate-y-10 sm:translate-y-12";
+        case 3:
+          return "translate-y-20 translate-x-10 sm:translate-y-24 sm:translate-x-12";
+        default:
+          return "";
+      }
+    }
+    return "";
+  };
 
   return (
     <div
@@ -11,92 +61,29 @@ const SocialBar = ({ currentSectionIndex, isDarkMode }) => {
       }`}
     >
       <nav
-        className={`z-[1000] flex flex-wrap flex-row-reverse  w-[72px] sm:w-[88px] gap-2 transition-transform duration-1000  origin-center relative left-[36px] sm:left-[44px]
-          ${
-            isContactSection
-              ? ""
-              : "translate-y-4 -translate-x-14 sm:-translate-x-20"
-          }
-        `}
+        className={`z-[1000] flex flex-wrap flex-row-reverse w-[72px] sm:w-[88px] gap-2 transition-transform duration-1000 origin-center relative left-[36px] sm:left-[44px] ${
+          isContactSection
+            ? ""
+            : "translate-y-4 -translate-x-14 sm:-translate-x-20"
+        }`}
       >
-        <button
-          onClick={() => {
-            window.open("https://github.com/ruizterce/");
-          }}
-          className={`h-8 w-8 sm:h-10 sm:w-10 transition-all duration-500 origin-center hover:drop-shadow-primary ${
-            isContactSection
-              ? "translate-x-16 sm:translate-x-20 -translate-y-20 scale-[3] hover:scale-x-[4] hover:scale-y-[4] drop-shadow-lg"
-              : ""
-          }`}
-        >
-          <img
-            src="/icons/github-original.svg"
-            className={`transition-all duration-700 ${
-              isDarkMode ? "invert" : ""
-            }`}
-          ></img>
-        </button>
-        <button
-          onClick={() => {
-            window.open("mailto:ruiz.terce@gmail.com");
-          }}
-          className={`h-8 w-8 sm:h-10 sm:w-10 transition-all duration-500 origin-center hover:drop-shadow-primary ${
-            isCol
-              ? " translate-y-10 translate-x-10 sm:translate-y-12 sm:translate-x-12"
-              : ""
-          } ${
-            isContactSection
-              ? "-translate-x-16 sm:-translate-x-20 -translate-y-20 scale-[3] hover:scale-x-[4] hover:scale-y-[4] drop-shadow-lg"
-              : ""
-          }`}
-        >
-          <img
-            src="/icons/mail.svg"
-            className={`transition-all duration-700 ${
-              isDarkMode ? "invert" : ""
-            }`}
-          ></img>
-        </button>
-        <button
-          onClick={() => {
-            window.open("https://www.linkedin.com/in/manuel-ruiz-tercedor/");
-          }}
-          className={`h-8 w-8 sm:h-10 sm:w-10 transition-all duration-500 origin-center hover:drop-shadow-primary ${
-            isCol ? "translate-y-10 sm:translate-y-12" : ""
-          } ${
-            isContactSection
-              ? "translate-x-16 sm:translate-x-20 translate-y-20 scale-[3] hover:scale-x-[4] hover:scale-y-[4] drop-shadow-lg"
-              : ""
-          }`}
-        >
-          <img
-            src="/icons/linkedin-plain.svg"
-            className={`transition-all duration-700 ${
-              isDarkMode ? "invert" : ""
-            }`}
-          ></img>
-        </button>{" "}
-        <button
-          onClick={() => {
-            window.open("https://discord.com/users/ruizterce");
-          }}
-          className={`h-8 w-8 sm:h-10 sm:w-10 transition-all duration-500 origin-center hover:drop-shadow-primary ${
-            isCol
-              ? "translate-y-20 translate-x-10 sm:translate-y-24 sm:translate-x-12"
-              : ""
-          } ${
-            isContactSection
-              ? "-translate-x-16 sm:-translate-x-20 translate-y-20 scale-[3] hover:scale-x-[4] hover:scale-y-[4] drop-shadow-lg"
-              : ""
-          }`}
-        >
-          <img
-            src="/icons/discord-mark-black.svg"
-            className={`transition-all duration-700 ${
-              isDarkMode ? "invert" : ""
-            }`}
-          ></img>
-        </button>
+        {contactIcons.map((button, index) => (
+          <button
+            key={index}
+            onClick={button.onClick}
+            className={`h-8 w-8 sm:h-10 sm:w-10 transition-all duration-500 origin-center hover:drop-shadow-primary ${getTransformClass(
+              index
+            )}`}
+          >
+            <img
+              src={button.icon}
+              className={`transition-all duration-700 ${
+                isDarkMode ? "invert" : ""
+              }`}
+              alt={`icon-${index}`}
+            ></img>
+          </button>
+        ))}
       </nav>
     </div>
   );
