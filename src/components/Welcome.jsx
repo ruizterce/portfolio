@@ -1,11 +1,12 @@
 import { Tilt } from "react-tilt";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
 const Welcome = ({ isCurrentSection, isDarkMode }) => {
   const [hoveredWord, setHoveredWord] = useState(null);
   const [cardPosition, setCardPosition] = useState({ x: 0, y: 0 });
   const [showCard, setshowCard] = useState(false);
+  const [activeWord, setActiveWord] = useState(null);
   const timeoutId = useRef(null);
 
   const hoverContent = {
@@ -118,9 +119,42 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
     ),
   };
 
+  // Hoverable words animation
+  useEffect(() => {
+    if (hoveredWord) return;
+    const words = ["ruizterce", "Full Stack Dev", "Barcelona"];
+    let isMounted = true;
+
+    const animateWords = () => {
+      // Select and activate word
+      const randomIndex = Math.floor(Math.random() * words.length);
+      setActiveWord(words[randomIndex]);
+
+      setTimeout(() => {
+        if (isMounted) {
+          setActiveWord(null); // Deactivate word
+
+          // Wait before starting the next cycle
+          setTimeout(() => {
+            if (isMounted) {
+              animateWords(); // Restart the cycle
+            }
+          }, 4000);
+        }
+      }, 450);
+    };
+
+    animateWords();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [hoveredWord]);
+
   const handleMouseEnter = (word, event) => {
     clearTimeout(timeoutId.current); // Cancel any pending hide operation
     setHoveredWord(word);
+    setActiveWord(null); // Stop cycling when hovered
     setCardPosition({ x: event.clientX, y: event.clientY });
 
     setTimeout(() => {
@@ -165,17 +199,19 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
         className="relative h-full w-5/6 flex justify-center items-center"
       >
         <div className="text-center w-5/6 sm:w-2/3 text-xl flex flex-col items-center">
-          <p className="leading-5">
-            <h1 className="text-4xl font-nunito font-black text-secondary tracking-[0.11em] leading-[2em]">
-              Welcome!
+          <div className="leading-5">
+            <h1 className="text-4xl font-nunito font-black text-secondary leading-[2em]">
+              Hey!
             </h1>
             <span className="text-2xl font-nunitoSans font-thin text-center tracking-[0.05em] leading-[0.3em]">
               I&apos;m{" "}
             </span>
             <span
-              className={`text-4xl font-nunito font-black text-primary text-justify tracking-[0.02em] leading-[0.3em] drop-shadow hover:cursor-pointer hover:drop-shadow-primary inline-block transition-all duration-[600ms] ease-in-out ${
-                isCurrentSection ? "" : "translate-x-[1000px]"
-              }`}
+              className={`text-4xl font-nunito font-black text-primary text-justify tracking-[0.02em] leading-[0.3em] drop-shadow hover:cursor-pointer hover:drop-shadow-primary hover:scale-[1.05] inline-block transition-all duration-[600ms] ease-in-out ${
+                activeWord === "ruizterce"
+                  ? "drop-shadow-primary scale-[1.05]"
+                  : ""
+              } ${isCurrentSection ? "" : "translate-x-[1000px]"}`}
               onMouseEnter={(e) => handleMouseEnter("ruizterce", e)}
               onMouseLeave={handleMouseLeave}
             >
@@ -187,9 +223,11 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
             </span>
             <br />
             <p
-              className={`w-max text-4xl font-nunito font-extrabold text-primary tracking-[0.1em] leading-[1em] drop-shadow hover:cursor-pointer hover:drop-shadow-primary block transition-all duration-700 ease-in-out ${
-                isCurrentSection ? "" : "-translate-x-[1000px]"
-              }`}
+              className={`w-max text-4xl font-nunito font-extrabold text-primary tracking-[0.1em] leading-[1em] drop-shadow hover:cursor-pointer hover:drop-shadow-primary hover:scale-[1.05] block transition-all duration-700 ease-in-out ${
+                activeWord === "Full Stack Dev"
+                  ? "drop-shadow-primary scale-[1.05]"
+                  : ""
+              } ${isCurrentSection ? "" : "-translate-x-[1000px]"}`}
               onMouseEnter={(e) => handleMouseEnter("Full Stack Dev", e)}
               onMouseLeave={handleMouseLeave}
             >
@@ -201,15 +239,17 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
             </span>
             <br />
             <span
-              className={`text-4xl font-nunito font-black text-primary tracking-[0.11em] drop-shadow hover:cursor-pointer hover:drop-shadow-primary block transition-all duration-[900ms] ease-in-out ${
-                isCurrentSection ? "" : "translate-x-[1000px]"
-              }`}
+              className={`text-4xl font-nunito font-black text-primary tracking-[0.11em] drop-shadow hover:cursor-pointer hover:drop-shadow-primary hover:scale-[1.05] block transition-all duration-[900ms] ease-in-out ${
+                activeWord === "Barcelona"
+                  ? "drop-shadow-primary scale-[1.05]"
+                  : ""
+              } ${isCurrentSection ? "" : "translate-x-[1000px]"}`}
               onMouseEnter={(e) => handleMouseEnter("Barcelona", e)}
               onMouseLeave={handleMouseLeave}
             >
               Barcelona
             </span>
-          </p>
+          </div>
         </div>
       </Tilt>
       {/* Hover Card */}
