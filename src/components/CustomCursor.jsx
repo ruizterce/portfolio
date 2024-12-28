@@ -63,8 +63,12 @@ const CustomCursor = () => {
           top: trailingPosition.y,
           transform: "translate(-50%, -50%)",
         }}
-        className="custom-trail fixed z-0 h-3 w-3 rounded-full bg-secondary"
-      ></div>
+        className="custom-trail-container fixed z-0 h-3 w-3 rounded-full bg-secondary flex justify-center items-center"
+      >
+        <div className="custom-trail-1 absolute z-0 h-2 w-2 rounded-full bg-lightMedium">
+          <div className="custom-trail-2 absolute z-0 h-1 w-1 rounded-full bg-primary"></div>
+        </div>
+      </div>
     </>
   );
 };
