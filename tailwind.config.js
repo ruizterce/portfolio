@@ -11,6 +11,15 @@ export default {
         DEFAULT: "0 2px 4px var(--tw-shadow-color)",
         lg: "0 8px 16px var(--tw-shadow-color)",
       },
+      dropShadow: {
+        primary: "0 0 5px #f8958b",
+      },
+      fontFamily: {
+        lato: ["Lato", "sans-serif"],
+        playfair: ["Playfair Display", "serif"],
+        nunito: ["Nunito", "sans-serif"],
+        nunitoSans: ["Nunito Sans", "sans-serif"],
+      },
     },
   },
   plugins: [
@@ -29,15 +38,6 @@ export default {
             darkMedium: "#44403c",
             darkMild: "#292524",
             dark: "#1c1917",
-          },
-          fontFamily: {
-            lato: ["Lato", "sans-serif"],
-            playfair: ["Playfair Display", "serif"],
-            nunito: ["Nunito", "sans-serif"],
-            nunitoSans: ["Nunito Sans", "sans-serif"],
-          },
-          dropShadow: {
-            primary: "0 0 5px #f8958b",
           },
         },
       },
@@ -63,15 +63,14 @@ export default {
         },
       ],
     }),
-    plugin(function ({ matchUtilities, theme }) {
-      matchUtilities(
-        {
-          "text-shadow": (value) => ({
-            textShadow: value,
-          }),
-        },
-        { values: theme("textShadow") }
+    plugin(({ addUtilities, theme }) => {
+      const textShadowUtilities = Object.fromEntries(
+        Object.entries(theme("textShadow")).map(([key, value]) => [
+          `.text-shadow-${key}`,
+          { textShadow: value },
+        ])
       );
+      addUtilities(textShadowUtilities);
     }),
   ],
 };
