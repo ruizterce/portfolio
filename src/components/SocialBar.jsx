@@ -56,12 +56,12 @@ const SocialBar = ({ currentSectionIndex, isDarkMode }) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 h-screen w-screen flex flex-col justify-start items-end transition-transform duration-500 origin-center opacity-50 ${
+      className={`fixed  top-0 left-0 h-screen w-screen flex flex-col justify-start items-end transition-transform duration-500 origin-center ${
         isContactSection ? "translate-y-1/2 -translate-x-1/2" : ""
       }`}
     >
       <nav
-        className={`z-[1000] flex flex-wrap flex-row-reverse w-[72px] sm:w-[88px] gap-2 transition-transform duration-1000 origin-center relative left-[36px] sm:left-[44px] ${
+        className={`flex flex-wrap flex-row-reverse w-[72px] sm:w-[88px] gap-2 transition-transform duration-1000 origin-center relative left-[36px] sm:left-[44px] ${
           isContactSection
             ? ""
             : "translate-y-4 -translate-x-14 sm:-translate-x-20"
@@ -77,10 +77,14 @@ const SocialBar = ({ currentSectionIndex, isDarkMode }) => {
           >
             <img
               src={button.icon}
-              className={`transition-all duration-700 ${
+              className={`transition-all duration-700  ${
                 isDarkMode ? "invert" : ""
               }`}
               alt={`icon-${index}`}
+              style={{
+                filter:
+                  "invert(48%) sepia(10%) saturate(279%) hue-rotate(342deg) brightness(89%) contrast(88%)",
+              }}
             ></img>
           </button>
         ))}

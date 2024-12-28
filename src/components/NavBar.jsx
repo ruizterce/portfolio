@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const Navbar = ({ sections, currentSectionIndex, scrollToSection }) => {
   const isCol = currentSectionIndex !== 1;
   return (
-    <nav className="fixed top-4 left-6 z-[1000] flex flex-wrap flex-row w-[72px] sm:w-[88px] gap-2 transition-transform duration-1000  origin-center ">
+    <nav className="fixed top-4 left-6 flex flex-wrap flex-row w-[72px] sm:w-[88px] gap-2 transition-transform duration-1000  origin-center ">
       {sections.map((section, index) => {
         const getTransformClass = () => {
           if (!isCol) return "";
@@ -25,7 +25,7 @@ const Navbar = ({ sections, currentSectionIndex, scrollToSection }) => {
           <button
             key={section}
             onClick={() => scrollToSection(index)}
-            className={`bg-none border-none cursor-pointer flex items-center gap-2 border  transition-all duration-500 ${getTransformClass()} `}
+            className={`bg-none border-none flex items-center gap-2 border  transition-all duration-500 ${getTransformClass()} `}
           >
             <span
               className={`h-8 w-8 sm:my-1 rounded-full transition-all duration-500 ${

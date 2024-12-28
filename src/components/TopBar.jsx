@@ -6,8 +6,8 @@ const Topbar = ({ isDarkMode, setIsDarkMode }) => {
   };
 
   return (
-    <div className="fixed z-[500] top-4 w-1/2 flex justify-end">
-      <label className="inline-flex items-center cursor-pointer opacity-25 hover:opacity-100 transition-all duration-500">
+    <div className="fixed z-[990] top-4 w-1/2 flex justify-end">
+      <label className="inline-flex items-center opacity-25 hover:opacity-100 transition-all duration-500">
         <input
           id="darkToggle"
           type="checkbox"

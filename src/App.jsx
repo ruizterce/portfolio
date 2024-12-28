@@ -8,6 +8,7 @@ import CardSlideshow from "./components/CardSlideshow";
 import SocialBar from "./components/SocialBar";
 import Contact from "./components/Contact";
 import Resume from "./components/Resume";
+import CustomCursor from "./components/CustomCursor";
 
 const sections = ["Welcome", "Projects", "Contact", "Resume"];
 
@@ -22,6 +23,7 @@ function App() {
         "overflow-hidden nunitoSans" + (isDarkMode ? " dark-mode" : "")
       }
     >
+      <CustomCursor />
       <Topbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <SocialBar
         currentSectionIndex={currentSectionIndex}

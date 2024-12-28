@@ -207,7 +207,7 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
               I&apos;m{" "}
             </span>
             <span
-              className={`text-4xl font-nunito font-black text-primary text-justify tracking-[0.02em] leading-[0.3em] drop-shadow hover:cursor-pointer hover:drop-shadow-primary hover:scale-[1.05] inline-block transition-all duration-[600ms] ease-in-out ${
+              className={`text-4xl font-nunito font-black text-primary text-justify tracking-[0.02em] leading-[0.3em] drop-shadow hover:drop-shadow-primary hover:scale-[1.05] inline-block transition-all duration-[600ms] ease-in-out ${
                 activeWord === "ruizterce"
                   ? "drop-shadow-primary scale-[1.05]"
                   : ""
@@ -223,7 +223,7 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
             </span>
             <br />
             <p
-              className={`w-max text-4xl font-nunito font-extrabold text-primary tracking-[0.1em] leading-[1em] drop-shadow hover:cursor-pointer hover:drop-shadow-primary hover:scale-[1.05] block transition-all duration-700 ease-in-out ${
+              className={`w-max text-4xl font-nunito font-extrabold text-primary tracking-[0.1em] leading-[1em] drop-shadow hover:drop-shadow-primary hover:scale-[1.05] block transition-all duration-700 ease-in-out ${
                 activeWord === "Full Stack Dev"
                   ? "drop-shadow-primary scale-[1.05]"
                   : ""
@@ -239,7 +239,7 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
             </span>
             <br />
             <span
-              className={`text-4xl font-nunito font-black text-primary tracking-[0.11em] drop-shadow hover:cursor-pointer hover:drop-shadow-primary hover:scale-[1.05] block transition-all duration-[900ms] ease-in-out ${
+              className={`text-4xl font-nunito font-black text-primary tracking-[0.11em] drop-shadow hover:drop-shadow-primary hover:scale-[1.05] block transition-all duration-[900ms] ease-in-out ${
                 activeWord === "Barcelona"
                   ? "drop-shadow-primary scale-[1.05]"
                   : ""

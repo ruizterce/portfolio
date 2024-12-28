@@ -11,7 +11,7 @@ const Resume = ({ isCurrentSection, isDarkMode }) => {
         onClick={openResume}
         src={`/img/Cv 2025 English-${isDarkMode ? "dark-" : ""}p.svg`}
         alt="resume"
-        className={`absolute sm:h-2/3 sm:w-auto h-auto w-2/3 drop-shadow cursor-pointer transition-all duration-500 hover:drop-shadow-primary hover:scale-[1.2] ${
+        className={`absolute sm:h-2/3 sm:w-auto h-auto w-2/3 drop-shadow transition-all duration-500 hover:drop-shadow-primary hover:scale-[1.2] ${
           isDarkMode ? "border border-1px" : ""
         } transition-all duration-700 ease-in-out  hover:rotate-0 ${
           isCurrentSection
