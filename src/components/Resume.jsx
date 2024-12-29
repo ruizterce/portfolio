@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const Resume = ({ isCurrentSection, isDarkMode }) => {
   const openResume = () => {
-    window.open("files/Cv 2025 English.pdf", "_blank");
+    window.open("files/Manuel Ruiz Tercedor CV.pdf", "_blank");
   };
 
   return (
