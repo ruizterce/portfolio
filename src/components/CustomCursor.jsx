@@ -5,6 +5,7 @@ const CustomCursor = () => {
   const [trailingPosition, setTrailingPosition] = useState({ x: 0, y: 0 });
   const [orbitAngle, setOrbitAngle] = useState(0);
   const [orbitPosition, setOrbitPosition] = useState({ x: 0, y: 0 });
+  const [orbitStep, setOrbitStep] = useState(0);
   const [isMouseMoving, setIsMouseMoving] = useState(false);
 
   // Mouse move listener
@@ -51,13 +52,19 @@ const CustomCursor = () => {
 
   // Orbital element position
   useEffect(() => {
-    const orbitRadius = 25;
+    const orbitRadius = 28;
 
     const orbitInterval = setInterval(() => {
       if (isMouseMoving) {
-        setOrbitAngle((prevAngle) => (prevAngle - 2) % 360);
+        if (orbitStep < 8) {
+          setOrbitStep(orbitStep + 0.04);
+        }
+        setOrbitAngle((prevAngle) => (prevAngle + orbitStep) % 360);
       } else {
-        setOrbitAngle((prevAngle) => (prevAngle + 0.5) % 360);
+        if (orbitStep > 0.8) {
+          setOrbitStep(orbitStep - 0.03);
+        }
+        setOrbitAngle((prevAngle) => (prevAngle + orbitStep) % 360);
       }
       setOrbitPosition({
         x: orbitRadius * Math.cos((orbitAngle * Math.PI) / 180),
@@ -66,7 +73,7 @@ const CustomCursor = () => {
     }, 10);
 
     return () => clearInterval(orbitInterval);
-  }, [isMouseMoving, orbitAngle]);
+  }, [isMouseMoving, orbitAngle, orbitStep]);
 
   return (
     <>
@@ -75,9 +82,10 @@ const CustomCursor = () => {
         style={{
           left: cursorPosition.x,
           top: cursorPosition.y,
-          transform: "translate(-50%, -50%)",
         }}
-        className="custom-cursor fixed z-[1000] h-6 w-6 rounded-full"
+        className={`custom-cursor fixed z-[990] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full transition-transform duration-700 ease-out origin-center ${
+          isMouseMoving ? "scale-75" : ""
+        }`}
       />
       {/* Trailing Circle */}
       <div
