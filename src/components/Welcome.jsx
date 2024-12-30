@@ -255,7 +255,7 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
       {/* Hover Card */}
       {hoveredWord && (
         <div
-          className={`absolute z-10 max-w-[600px] sm:-translate-y-1/2 bg-light text-dark shadow-lg p-4 rounded-xl transition-all duration-500 ease-out text-justify darkTheme:border border-dark ${
+          className={`absolute z-[1000] max-w-[600px] sm:-translate-y-1/2 bg-light text-dark shadow-lg p-4 rounded-xl transition-all duration-500 ease-out text-justify darkTheme:border border-dark ${
             showCard ? "scale-100 opacity-1" : "scale-0 opacity-0"
           } ${window.innerWidth < 640 ? "fixed bottom-4 left-4 right-4" : ""}`}
           style={
