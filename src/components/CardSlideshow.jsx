@@ -7,29 +7,6 @@ import PropTypes from "prop-types";
 const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
   const data = [
     {
-      title: "Battleship",
-      imgUrl: "/img/battleship-1.png",
-      chips: (
-        <>
-          <Chip icon="/icons/html5-plain.svg" text="HTML" bgColor="light" />
-          <Chip icon="/icons/css3-plain.svg" text="CSS" bgColor="light" />
-          <Chip
-            icon="/icons/javascript-original.svg"
-            text="JavaScript"
-            bgColor="light"
-          />
-          <Chip
-            icon="/icons/webpack-plain.svg"
-            text="Webpack"
-            bgColor="light"
-          />
-        </>
-      ),
-      description: "Classic Game",
-      liveUrl: "https://ruizterce.github.io/Battleship/",
-      repoUrl: "https://github.com/ruizterce/Battleship",
-    },
-    {
       title: "CV Editor",
       imgUrl: "/img/cv-editor-1.png",
       chips: (
@@ -86,6 +63,35 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
       description: "Social Media App",
       liveUrl: "https://linkeem.mooo.com",
       repoUrl: "https://github.com/ruizterce/linkeem",
+    },
+    {
+      title: "jsWave",
+      imgUrl: "/img/jsWave-4.png",
+      chips: (
+        <>
+          <Chip
+            icon="/icons/typescript-original.svg"
+            text="TypeScript"
+            bgColor="light"
+          />
+          <Chip icon="/icons/react-original.svg" text="React" bgColor="light" />
+          <Chip
+            icon="/icons/vitejs-plain.svg"
+            text="Vite"
+            bgColor="light"
+            invertIcon={true}
+          />
+          <Chip
+            icon="/icons/tailwindcss-original.svg"
+            text="TailwindCSS"
+            bgColor="light"
+          />
+          <Chip icon="/icons/tonejs.png" text="Tone.js" bgColor="light" />
+        </>
+      ),
+      description: "Music Production Studio",
+      liveUrl: "https://ruizterce.github.io/jsWave/",
+      repoUrl: "https://github.com/ruizterce/jsWave",
     },
     {
       title: "Blog API",

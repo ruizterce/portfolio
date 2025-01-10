@@ -5,7 +5,7 @@ const CustomCursor = () => {
   const [trailingPosition, setTrailingPosition] = useState({ x: 0, y: 0 });
   const [orbitAngle, setOrbitAngle] = useState(0);
   const [orbitPosition, setOrbitPosition] = useState({ x: 0, y: 0 });
-  const [orbitStep, setOrbitStep] = useState(0);
+  const [orbitStep, setOrbitStep] = useState(0.8);
   const [isMouseMoving, setIsMouseMoving] = useState(false);
 
   // Mouse move listener
