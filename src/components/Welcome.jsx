@@ -7,6 +7,7 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
   const [cardPosition, setCardPosition] = useState({ x: 0, y: 0 });
   const [showCard, setshowCard] = useState(false);
   const [activeWord, setActiveWord] = useState(null);
+  const [showScrollDownIcon, setShowScrollDownIcon] = useState(false);
   const timeoutId = useRef(null);
 
   const hoverContent = {
@@ -177,6 +178,24 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
     }, 500);
   };
 
+  // Show scroll down icon animation
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowScrollDownIcon(true);
+    }, 4000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  // Hide scroll down icon animation
+  useEffect(() => {
+    if (isCurrentSection === false) {
+      setShowScrollDownIcon(false);
+    }
+  }, [isCurrentSection]);
+
   const tiltOptions = {
     reverse: true,
     max: 20,
@@ -252,6 +271,24 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
           </div>
         </div>
       </Tilt>
+
+      {/* Scroll/Swipe icon hint */}
+      <div
+        className={`absolute bottom-20 text-center animate-custom-pulse transform-scale duration-[1500ms] ${
+          showScrollDownIcon ? "scale-100" : "scale-0"
+        }`}
+      >
+        <img
+          src={`${
+            window.innerWidth <= 768
+              ? "/icons/swipe_vertical.svg"
+              : "/icons/scroll-down.svg"
+          }`}
+          alt="Scroll down"
+          className="w-16 md:w-10 h-auto"
+        />
+      </div>
+
       {/* Hover Card */}
       {hoveredWord && (
         <div

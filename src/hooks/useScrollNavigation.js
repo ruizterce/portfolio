@@ -45,10 +45,10 @@ const useScrollNavigation = (sections) => {
       const endTouchY = e.changedTouches[0].clientY;
       const deltaY = startTouchY - endTouchY;
 
-      if (deltaY > 100 && currentSectionIndex < sections.length - 1) {
+      if (deltaY > 50 && currentSectionIndex < sections.length - 1) {
         // Swipe up
         setCurrentSectionIndex((prevIndex) => prevIndex + 1);
-      } else if (deltaY < -100 && currentSectionIndex > 0) {
+      } else if (deltaY < -50 && currentSectionIndex > 0) {
         // Swipe down
         setCurrentSectionIndex((prevIndex) => prevIndex - 1);
       }

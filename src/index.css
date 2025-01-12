@@ -35,6 +35,16 @@ body {
   cursor: none;
 }
 
+@keyframes pulse-opacity {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 /* Custom Cursor */
 button,
 a,

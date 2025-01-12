@@ -24,6 +24,13 @@ export default {
         orbit: "orbit 7s linear infinite",
         "orbit-inverse":
           "orbit-inverse 4s cubic-bezier(0.5, 0.25, 0.4, 0.7) infinite",
+        "custom-pulse": "custom-pulse 2s infinite",
+      },
+      keyframes: {
+        "custom-pulse": {
+          "0%, 100%": { opacity: "0" },
+          "50%": { opacity: "0.3" },
+        },
       },
     },
   },
