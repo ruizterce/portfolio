@@ -18,12 +18,12 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
           className="h-auto"
         />
         <h1>
-          As an Industrial Design and Product Development engineer, my journey
-          through product design and manufacturing has shaped my expertise in
-          systems, processes, QA, visual language, and user experience. Inspired
-          by the transformative power of web technologies, I discovered my
-          passion for web development, where I now focus on creating impactful
-          and scalable solutions with thoughtful design.
+          Coming from a background in Industrial Design and Product Development,
+          I&apos;ve spent a decade shaping my expertise in systems, processes,
+          QA, visual language, and user experience. Then I discovered web
+          technologies—and that&apos;s where I found my true passion. Today, I
+          love building smart, scalable web solutions with design at the heart
+          of it all.
         </h1>
       </div>
     ),
