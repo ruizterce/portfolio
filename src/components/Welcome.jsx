@@ -216,7 +216,7 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
       >
         <div className="text-center w-5/6 sm:w-2/3 text-xl flex flex-col items-center">
           <div className="leading-5">
-            <h1 className="text-4xl font-nunito font-black text-secondary leading-[2em]">
+            <h1 className="text-4xl font-nunito font-black text-secondary leading-[2em] transition-all duration-700 ease-in-out">
               {t("welcome_title")}
             </h1>
             <span
