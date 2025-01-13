@@ -1,6 +1,8 @@
 import { Tilt } from "react-tilt";
 import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
+import i18n from "../lib/i18n";
+import { useTranslation } from "react-i18next";
 
 const Welcome = ({ isCurrentSection, isDarkMode }) => {
   const [hoveredWord, setHoveredWord] = useState(null);
@@ -9,6 +11,8 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
   const [activeWord, setActiveWord] = useState(null);
   const [showScrollDownIcon, setShowScrollDownIcon] = useState(false);
   const timeoutId = useRef(null);
+  const { t } = useTranslation();
+  const currentLanguage = i18n.language;
 
   const hoverContent = {
     ruizterce: (
@@ -18,14 +22,7 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
           alt="Author's portrait"
           className="h-auto"
         />
-        <h1>
-          Coming from a background in Industrial Design and Product Development,
-          I&apos;ve spent a decade shaping my expertise in systems, processes,
-          QA, visual language, and user experience. Then I discovered web
-          technologies—and that&apos;s where I found my true passion. Today, I
-          love building smart, scalable web solutions with design at the heart
-          of it all.
-        </h1>
+        <h1>{t("welcome_bio")}</h1>
       </div>
     ),
     "Full Stack Dev": (
@@ -220,16 +217,26 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
         <div className="text-center w-5/6 sm:w-2/3 text-xl flex flex-col items-center">
           <div className="leading-5">
             <h1 className="text-4xl font-nunito font-black text-secondary leading-[2em]">
-              Hey!
+              {t("welcome_title")}
             </h1>
-            <span className="text-2xl font-nunitoSans font-thin text-center tracking-[0.05em] leading-[0.3em]">
-              I&apos;m{" "}
+            <span
+              className={`text-2xl font-nunitoSans font-thin text-center leading-[0.3em] ${
+                currentLanguage === "en"
+                  ? "tracking-[0.05em]"
+                  : "tracking-[0.15em] relative right-[2px]"
+              }`}
+            >
+              {t("welcome_p_1")}{" "}
             </span>
             <span
-              className={`text-4xl font-nunito font-black text-primary text-justify tracking-[0.02em] leading-[0.3em] drop-shadow hover:drop-shadow-primary hover:scale-[1.05] inline-block transition-all duration-[600ms] ease-in-out ${
+              className={`text-4xl font-nunito font-black text-primary text-justify leading-[0.3em] drop-shadow hover:drop-shadow-primary hover:scale-[1.05] inline-block transition-all duration-[600ms] ease-in-out ${
                 activeWord === "ruizterce"
                   ? "drop-shadow-primary scale-[1.05]"
                   : ""
+              } ${
+                currentLanguage === "en"
+                  ? "tracking-[0.02em]"
+                  : "tracking-[0.08em]"
               } ${isCurrentSection ? "" : "translate-x-[1000px]"}`}
               onMouseEnter={(e) => handleMouseEnter("ruizterce", e)}
               onMouseLeave={handleMouseLeave}
@@ -237,8 +244,14 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
               ruizterce
             </span>
             <br />
-            <span className="font-nunitoSans  font-thin text-[1.4em] tracking-[0.155em] leading-[1.1em]">
-              a passionate
+            <span
+              className={`font-nunitoSans  font-thin text-[1.4em]  leading-[1.1em] ${
+                currentLanguage === "en"
+                  ? "tracking-[0.155em]"
+                  : "tracking-[0.18em]"
+              }`}
+            >
+              {t("welcome_p_2")}
             </span>
             <br />
             <p
@@ -250,19 +263,47 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
               onMouseEnter={(e) => handleMouseEnter("Full Stack Dev", e)}
               onMouseLeave={handleMouseLeave}
             >
-              <span>Full Stack </span> <br />
-              <span>Developer</span>
+              <span
+                className={`${
+                  currentLanguage === "en"
+                    ? "tracking-[0.1em]"
+                    : "tracking-[0.001em] relative right-[3px]"
+                }`}
+              >
+                {t("welcome_p_3")}
+              </span>
+              <br />
+              <span
+                className={`${
+                  currentLanguage === "en"
+                    ? "tracking-[0.1em]"
+                    : "tracking-[0.21em] relative left-[1px]"
+                }`}
+              >
+                {t("welcome_p_4")}
+              </span>
             </p>
-            <span className="font-nunitoSans  font-thin text-[1.4em] tracking-[0.096em] leading-[1em]">
-              established in
+            <span
+              className={`font-nunitoSans font-thin text-[1.4em] relative top-[1px]  ${
+                currentLanguage === "en"
+                  ? " tracking-[0.096em] leading-[1em]"
+                  : "tracking-[0.17em] left-[1px] "
+              }`}
+            >
+              {t("welcome_p_5")}
             </span>
             <br />
             <span
-              className={`text-4xl font-nunito font-black text-primary tracking-[0.11em] drop-shadow hover:drop-shadow-primary hover:scale-[1.05] block transition-all duration-[900ms] ease-in-out ${
+              className={`text-4xl font-nunito font-black text-primary drop-shadow hover:drop-shadow-primary hover:scale-[1.05] block transition-all duration-[900ms] ease-in-out ${
                 activeWord === "Barcelona"
                   ? "drop-shadow-primary scale-[1.05]"
                   : ""
-              } ${isCurrentSection ? "" : "translate-x-[1000px]"}`}
+              } ${
+                currentLanguage === "en"
+                  ? "tracking-[0.11em]"
+                  : "tracking-[0.23em] relative left-[1px]"
+              }
+              ${isCurrentSection ? "" : "translate-x-[1000px]"}`}
               onMouseEnter={(e) => handleMouseEnter("Barcelona", e)}
               onMouseLeave={handleMouseLeave}
             >

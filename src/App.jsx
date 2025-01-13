@@ -1,4 +1,5 @@
 import { useState } from "react";
+import i18n from "./lib/i18n";
 import Navbar from "./components/NavBar";
 import Section from "./components/Section";
 import Topbar from "./components/TopBar";
@@ -17,6 +18,11 @@ function App() {
     useScrollNavigation(sections);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "en" ? "es" : "en";
+    i18n.changeLanguage(newLang);
+  };
+
   return (
     <div
       className={
@@ -24,7 +30,11 @@ function App() {
       }
     >
       <CustomCursor />
-      <Topbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <Topbar
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
+        toggleLanguage={toggleLanguage}
+      />
       <SocialBar
         currentSectionIndex={currentSectionIndex}
         isDarkMode={isDarkMode}
@@ -34,7 +44,6 @@ function App() {
         currentSectionIndex={currentSectionIndex}
         scrollToSection={scrollToSection}
       />
-
       <Section id="Welcome">
         <Welcome
           isCurrentSection={currentSectionIndex === 0}

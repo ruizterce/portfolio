@@ -3,11 +3,13 @@ import "swiper/css";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import Chip from "./Chip";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
+  const { t } = useTranslation();
   const data = [
     {
-      title: "CV Editor",
+      title: t("project_1_t"),
       imgUrl: "/img/cv-editor-1.png",
       chips: (
         <>
@@ -25,12 +27,12 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
           />
         </>
       ),
-      description: "Create your CV Tool",
+      description: t("project_1_d"),
       liveUrl: "https://ruizterce-cv-editor.netlify.app/",
       repoUrl: "https://github.com/ruizterce/cv-editor",
     },
     {
-      title: "Linkeem",
+      title: t("project_2_t"),
       imgUrl: `/img/linkeem-2-${isDarkMode ? "d" : "l"}.png`,
       chips: (
         <>
@@ -60,12 +62,12 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
           />
         </>
       ),
-      description: "Social Media App",
+      description: t("project_2_d"),
       liveUrl: "https://linkeem.mooo.com",
       repoUrl: "https://github.com/ruizterce/linkeem",
     },
     {
-      title: "jsWave",
+      title: t("project_3_t"),
       imgUrl: "/img/jsWave-4.png",
       chips: (
         <>
@@ -89,12 +91,12 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
           <Chip icon="/icons/tonejs.png" text="Tone.js" bgColor="light" />
         </>
       ),
-      description: "Music Production Studio",
+      description: t("project_3_d"),
       liveUrl: "https://ruizterce.github.io/jsWave/",
       repoUrl: "https://github.com/ruizterce/jsWave",
     },
     {
-      title: "Blog API",
+      title: t("project_4_t"),
       chips: (
         <>
           <Chip
@@ -123,12 +125,12 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
         </>
       ),
       imgUrl: "/img/blog-authors-1.png",
-      description: "Multi-frontend Blog",
+      description: t("project_4_d"),
       liveUrl: "",
       repoUrl: "https://github.com/ruizterce/blog-api",
     },
     {
-      title: "Card Clicker",
+      title: t("project_5_t"),
       chips: (
         <>
           <Chip
@@ -146,7 +148,7 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
         </>
       ),
       imgUrl: "/img/pokemon-1.png",
-      description: "Memory Game",
+      description: t("project_5_d"),
       liveUrl: "https://cardclicker.netlify.app",
       repoUrl: "https://github.com/ruizterce/card-clicker-game",
     },
@@ -159,7 +161,7 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
           isCurrentSection ? "" : "-translate-x-[1000px] opacity-0"
         }`}
       >
-        Work
+        {t("navBar_2")}
       </h1>
       <div
         className={`w-full translate-y-10 transition-all duration-700 ease-in-out ${

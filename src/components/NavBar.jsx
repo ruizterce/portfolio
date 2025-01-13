@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 const Navbar = ({ sections, currentSectionIndex, scrollToSection }) => {
+  const { t } = useTranslation();
   const isCol = currentSectionIndex !== 1;
   return (
     <nav className="fixed top-4 left-6 flex flex-wrap flex-row w-[72px] sm:w-[88px] gap-2 transition-transform duration-1000  origin-center ">
@@ -43,7 +45,7 @@ const Navbar = ({ sections, currentSectionIndex, scrollToSection }) => {
                   : "text-lightMedium font-medium"
               }`}
             >
-              {isCol ? section.charAt(0).toUpperCase() + section.slice(1) : ""}
+              {isCol ? t(`navBar_${index + 1}`) : ""}
             </span>
           </button>
         );

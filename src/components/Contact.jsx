@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 const Contact = ({ isCurrentSection }) => {
+  const { t } = useTranslation();
   return (
     <div className="h-screen w-screen bg-light flex flex-col items-center justify-center">
       <h1
@@ -8,7 +10,7 @@ const Contact = ({ isCurrentSection }) => {
           isCurrentSection ? "" : "-translate-y-[3000px] scale-0 opacity-0"
         }`}
       >
-        Contact
+        {t("navBar_3")}
       </h1>
       <span
         className={`text-medium transition-all duration-1000 ${
