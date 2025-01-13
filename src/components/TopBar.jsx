@@ -1,8 +1,15 @@
 import PropTypes from "prop-types";
+import { useNavigate, useParams } from "react-router-dom";
 
-const Topbar = ({ isDarkMode, setIsDarkMode, toggleLanguage }) => {
+const Topbar = ({ isDarkMode, setIsDarkMode }) => {
+  const { lang } = useParams();
   const handleDarkToggle = () => {
     setIsDarkMode(!isDarkMode);
+  };
+  const navigate = useNavigate();
+  const toggleLanguage = () => {
+    const newLang = lang === "en" ? "es" : "en";
+    navigate(`/${newLang}`);
   };
 
   return (
@@ -34,6 +41,7 @@ const Topbar = ({ isDarkMode, setIsDarkMode, toggleLanguage }) => {
           onChange={toggleLanguage}
           value={isDarkMode}
           className="sr-only peer"
+          checked={lang === "es"}
         />
         <div
           className={`relative w-11 h-6 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-medium rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-primary after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-primary after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${
@@ -55,7 +63,6 @@ const Topbar = ({ isDarkMode, setIsDarkMode, toggleLanguage }) => {
 Topbar.propTypes = {
   isDarkMode: PropTypes.bool.isRequired,
   setIsDarkMode: PropTypes.func.isRequired,
-  toggleLanguage: PropTypes.func.isRequired,
 };
 
 export default Topbar;
