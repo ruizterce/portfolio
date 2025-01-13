@@ -199,9 +199,26 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
                     {project.chips}
                   </div>
                   <div className="w-full flex flex-col items-center p-2">
-                    <h1 className="text-3xl font-nunito font-extrabold ">
-                      {project.title}
-                    </h1>
+                    <a
+                      href={project.liveUrl ? project.liveUrl : null}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`py-1 px-4 font-nunito   ${
+                        project.liveUrl
+                          ? "bg-primary drop-shadow hover:scale-[1.05] hover:drop-shadow-primary active:shadow-none active:bg-medium active:scale-[0.9] font-black rounded-full transition-all duration-200"
+                          : ""
+                      }`}
+                    >
+                      <h1
+                        className={`text-3xl font-nunito font-extrabold px-3 ${
+                          project.liveUrl
+                            ? "text-lightMild text-shadow-sm shadow-gray-500 active:shadow-primary "
+                            : "text-primary"
+                        }`}
+                      >
+                        {project.title}
+                      </h1>
+                    </a>
 
                     <h1 className="mb-2 font-light">{project.description}</h1>
                     <div className="box-border flex w-5/6 mb-2 justify-around ">
@@ -213,7 +230,7 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
                           className="py-1 px-4 font-nunito bg-primary drop-shadow hover:scale-[1.05] hover:drop-shadow-primary active:shadow-none active:bg-medium active:scale-[0.9] font-black rounded-full transition-all duration-200"
                         >
                           <span className="text-lightMild text-shadow-sm shadow-gray-500 active:shadow-primary">
-                            LIVE SITE
+                            {t("live_site")}
                           </span>
                         </a>
                       ) : (
