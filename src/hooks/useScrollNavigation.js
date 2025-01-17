@@ -4,7 +4,6 @@ import { scroller } from "react-scroll";
 const useScrollNavigation = (sections) => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
-  const [startTouchY, setStartTouchY] = useState(null);
 
   const scrollToSection = useCallback(
     (index) => {
@@ -14,14 +13,18 @@ const useScrollNavigation = (sections) => {
         smooth: "easeInOutQuad",
       });
       setTimeout(() => setIsScrolling(false), 500); // Prevent overlapping scrolls
-      setCurrentSectionIndex(index); // Synchronize state immediately
     },
     [sections]
   );
 
   useEffect(() => {
+    let lastScrollTime = 0; // Track the last scroll event timestamp
+
     const handleWheel = (e) => {
-      if (isScrolling) return;
+      const now = Date.now();
+
+      if (isScrolling || now - lastScrollTime < 500) return;
+      lastScrollTime = now;
 
       if (e.deltaY > 0 && currentSectionIndex < sections.length - 1) {
         setCurrentSectionIndex((prevIndex) => prevIndex + 1);
@@ -30,17 +33,18 @@ const useScrollNavigation = (sections) => {
       }
     };
 
-    const handleTouchStart = (e) => {
-      setStartTouchY(e.touches[0].clientY);
-    };
+    let startTouchY = null;
 
-    const handleTouchMove = (e) => {
-      // Prevent default browser swipe behavior
-      e.preventDefault();
+    const handleTouchStart = (e) => {
+      startTouchY = e.touches[0].clientY;
     };
 
     const handleTouchEnd = (e) => {
-      if (isScrolling || startTouchY === null) return;
+      const now = Date.now();
+
+      if (isScrolling || now - lastScrollTime < 500 || startTouchY === null)
+        return;
+      lastScrollTime = now;
 
       const endTouchY = e.changedTouches[0].clientY;
       const deltaY = startTouchY - endTouchY;
@@ -53,21 +57,19 @@ const useScrollNavigation = (sections) => {
         setCurrentSectionIndex((prevIndex) => prevIndex - 1);
       }
 
-      setStartTouchY(null); // Reset touch start position
+      startTouchY = null; // Reset touch start position
     };
 
     window.addEventListener("wheel", handleWheel);
     window.addEventListener("touchstart", handleTouchStart);
-    window.addEventListener("touchmove", handleTouchMove, { passive: false }); // passive must be false to call preventDefault
     window.addEventListener("touchend", handleTouchEnd);
 
     return () => {
       window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [currentSectionIndex, isScrolling, sections.length, startTouchY]);
+  }, [currentSectionIndex, isScrolling, sections.length]);
 
   useEffect(() => {
     scrollToSection(currentSectionIndex);
