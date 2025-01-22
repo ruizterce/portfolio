@@ -12,6 +12,7 @@ const useScrollNavigation = (sections) => {
         duration: 500,
         smooth: "easeInOutQuad",
       });
+      setCurrentSectionIndex(index);
       setTimeout(() => setIsScrolling(false), 500); // Prevent overlapping scrolls
     },
     [sections]
