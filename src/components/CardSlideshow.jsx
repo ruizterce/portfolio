@@ -42,13 +42,13 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
             bgColor="light"
           />
           <Chip icon="/icons/react-original.svg" text="React" bgColor="light" />
-          <Chip icon="/icons/ionic-original.svg" text="Ionic" bgColor="light" />
           <Chip
             icon="/icons/express-original.svg"
             text="Express"
             bgColor="light"
             invertIcon={true}
           />
+          <Chip icon="/icons/ionic-original.svg" text="Ionic" bgColor="light" />
           <Chip
             icon="/icons/postgresql-plain.svg"
             text="PostgreSQL"
@@ -68,9 +68,49 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
     },
     {
       title: t("project_3_t"),
-      imgUrl: "/img/jsWave-4.png",
+      imgUrl: "/img/sn8krs-1.png",
       chips: (
         <>
+          <Chip
+            icon="/icons/typescript-original.svg"
+            text="TypeScript"
+            bgColor="light"
+          />
+          <Chip
+            icon="/icons/nextjs-original.svg"
+            text="Next.js"
+            bgColor="light"
+            invertIcon={true}
+          />
+          <Chip
+            icon="/icons/redux-original.svg"
+            text="Redux"
+            bgColor="light"
+            invertIcon={true}
+          />
+          <Chip
+            icon="/icons/amazonwebservices-original-wordmark.svg"
+            text="AWS"
+            bgColor="light"
+            invertIcon={true}
+          />
+          <Chip
+            icon="/icons/dynamodb-original.svg"
+            text="DynamoDB"
+            bgColor="light"
+          />
+          <Chip icon="/icons/stripe.png" text="Stripe" bgColor="light" />
+        </>
+      ),
+      description: t("project_3_d"),
+      liveUrl: "https://eiozliays3.execute-api.eu-west-1.amazonaws.com/",
+      repoUrl: "https://github.com/ruizterce/sn8krs",
+    },
+    {
+      title: t("project_4_t"),
+      chips: (
+        <>
+          {" "}
           <Chip
             icon="/icons/typescript-original.svg"
             text="TypeScript"
@@ -91,12 +131,13 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
           <Chip icon="/icons/tonejs.png" text="Tone.js" bgColor="light" />
         </>
       ),
-      description: t("project_3_d"),
+      imgUrl: "/img/jsWave-4.png",
+      description: t("project_4_d"),
       liveUrl: "https://ruizterce.github.io/jsWave/",
       repoUrl: "https://github.com/ruizterce/jsWave",
     },
     {
-      title: t("project_4_t"),
+      title: t("project_5_t"),
       chips: (
         <>
           <Chip
@@ -125,32 +166,9 @@ const CardSlideshow = ({ isCurrentSection, isDarkMode }) => {
         </>
       ),
       imgUrl: "/img/blog-authors-1.png",
-      description: t("project_4_d"),
+      description: t("project_5_d"),
       liveUrl: "",
       repoUrl: "https://github.com/ruizterce/blog-api",
-    },
-    {
-      title: t("project_5_t"),
-      chips: (
-        <>
-          <Chip
-            icon="/icons/javascript-original.svg"
-            text="JavaScript"
-            bgColor="light"
-          />
-          <Chip icon="/icons/react-original.svg" text="React" bgColor="light" />
-          <Chip
-            icon="/icons/vitejs-plain.svg"
-            text="Vite"
-            bgColor="light"
-            invertIcon={true}
-          />
-        </>
-      ),
-      imgUrl: "/img/pokemon-1.png",
-      description: t("project_5_d"),
-      liveUrl: "https://cardclicker.netlify.app",
-      repoUrl: "https://github.com/ruizterce/card-clicker-game",
     },
   ];
 

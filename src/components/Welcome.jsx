@@ -68,19 +68,24 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
           className="h-16 w-auto"
         />
         <img
-          src="/icons/tailwindcss-plain-wordmark.svg"
-          alt="TailwindCSS"
+          src="/icons/redux-original.svg"
+          alt="Redux"
+          className="h-16 w-auto"
+        />
+        <img
+          src="/icons/nextjs-original-wordmark.svg"
+          alt="Next.js"
           className="h-16 w-auto darkTheme:invert"
         />
         <img
-          src="/icons/axios-plain-wordmark.svg"
-          alt="Axios"
-          className="h-16 w-auto"
+          src="/icons/express-original-wordmark.svg"
+          alt="Express"
+          className="h-16 w-auto darkTheme:invert"
         />
         <img
-          src="/icons/postman-plain-wordmark.svg"
-          alt="Postman"
-          className="h-16 w-auto"
+          src="/icons/amazonwebservices-original-wordmark.svg"
+          alt="AWS"
+          className="h-16 w-auto darkTheme:invert"
         />
         <img
           src="/icons/nodejs-plain-wordmark.svg"
@@ -93,14 +98,24 @@ const Welcome = ({ isCurrentSection, isDarkMode }) => {
           className="h-16 w-auto darkTheme:invert"
         />
         <img
+          src="/icons/dynamodb-original.svg"
+          alt="DynamoDB"
+          className="h-16 w-auto"
+        />
+        <img
           src="/icons/prisma-original-wordmark.svg"
           alt="Prisma"
           className="h-16 w-auto darkTheme:invert"
         />
         <img
-          src="/icons/express-original-wordmark.svg"
-          alt="Express"
+          src="/icons/tailwindcss-plain-wordmark.svg"
+          alt="TailwindCSS"
           className="h-16 w-auto darkTheme:invert"
+        />
+        <img
+          src="/icons/postman-plain-wordmark.svg"
+          alt="Postman"
+          className="h-16 w-auto"
         />
       </div>
     ),

@@ -56,7 +56,7 @@ const CustomCursor = () => {
 
     const orbitInterval = setInterval(() => {
       if (isMouseMoving) {
-        if (orbitStep < 8) {
+        if (orbitStep < 4) {
           setOrbitStep(orbitStep + 0.04);
         }
         setOrbitAngle((prevAngle) => (prevAngle + orbitStep) % 360);

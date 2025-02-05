@@ -23,7 +23,7 @@ export default {
       animation: {
         orbit: "orbit 7s linear infinite",
         "orbit-inverse":
-          "orbit-inverse 4s cubic-bezier(0.5, 0.25, 0.4, 0.7) infinite",
+          "orbit-inverse 5s cubic-bezier(0.5, 0.25, 0.4, 0.7) infinite",
         "custom-pulse": "custom-pulse 2s infinite",
       },
       keyframes: {
