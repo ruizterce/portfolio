@@ -48,7 +48,7 @@ const Topbar = ({ isDarkMode, setIsDarkMode }) => {
             isDarkMode ? "bg-lightMedium" : "bg-gray-300"
           }`}
         >
-          <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 select-none">
             <div className="flex items-center gap-1 text-sm font-bold text-medium">
               <span>es</span>
               <span>en</span>

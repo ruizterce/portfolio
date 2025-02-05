@@ -56,7 +56,7 @@ const SocialBar = ({ currentSectionIndex, isDarkMode }) => {
 
   return (
     <div
-      className={`fixed  top-0 left-0 h-screen w-screen flex flex-col justify-start items-end transition-transform duration-500 origin-center ${
+      className={`fixed  top-0 left-0 h-screen w-screen flex flex-col justify-start items-end select-none transition-transform duration-500 origin-center ${
         isContactSection ? "translate-y-1/2 -translate-x-1/2" : ""
       }`}
     >

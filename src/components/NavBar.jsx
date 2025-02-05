@@ -27,7 +27,7 @@ const Navbar = ({ sections, currentSectionIndex, scrollToSection }) => {
           <button
             key={section}
             onClick={() => scrollToSection(index)}
-            className={`bg-none border-none flex items-center gap-2 border  transition-all duration-500 ${getTransformClass()} `}
+            className={`bg-none border-none flex items-center gap-2 border select-none transition-all duration-500 ${getTransformClass()} `}
           >
             <span
               className={`h-8 w-8 sm:my-1 rounded-full transition-all duration-500 ${

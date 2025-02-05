@@ -13,7 +13,7 @@ const Contact = ({ isCurrentSection }) => {
         {t("navBar_3")}
       </h1>
       <span
-        className={`text-medium transition-all duration-1000 ${
+        className={`text-medium transition-all duration-1000 select-all ${
           isCurrentSection
             ? "opacity-1 translate-y-60 sm:translate-y-72"
             : "scale-0 opacity-0 -translate-y-16"
